@@ -21,62 +21,6 @@ namespace neta
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-
-            DateTime dt = DateTime.Now;
-            current.Text = dt.ToString();
-
-            DateTime st = DateTime.Parse(startbox.Text);
-            DateTime en = DateTime.Parse(endbox.Text);
-
-
-            string format = "yyyy/MM/dd HH:mm:ss";
-
-            start.Text = st.ToString(format);
-            end.Text = en.ToString(format);
-
-            TimeSpan elapsedSpan = dt - st;
-
-            string dd = elapsedSpan.Days.ToString();
-            string hh = elapsedSpan.Hours.ToString();
-            string mm = elapsedSpan.Minutes.ToString();
-            string ss = elapsedSpan.Seconds.ToString();
-            if (st < dt)
-            {
-                elapsed.Text = dd + "日" + hh + "時間" +
-                mm + "分" + ss + "秒";
-            }
-            else {
-
-                elapsed.Text = "開始されてません";
-            }
-
-            TimeSpan leftSpan = en - dt;
-
-            dd = leftSpan.Days.ToString();
-            hh = leftSpan.Hours.ToString();
-            mm = leftSpan.Minutes.ToString();
-            ss = leftSpan.Seconds.ToString();
-
-            if (en > dt)
-            {
-                left.Text = dd + "日" + hh + "時間" +
-                     mm + "分" + ss + "秒";
-            }
-            else {
-                left.Text = "終了しています";
-            }
-
-        TimeSpan drationSpan = en - st;
-
-        dd = drationSpan.Days.ToString();
-                    hh = drationSpan.Hours.ToString();
-                    mm = drationSpan.TotalHours.ToString();
-
-            duration.Text = dd + "日" + hh + "時間,"　+mm + "時間";
-
-            eventname.Text = ibemei.Text;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -130,17 +74,127 @@ namespace neta
             }
         }
 
-        private void duration_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.startbox.Text = Properties.Settings.Default.st;
+            this.endbox.Text = Properties.Settings.Default.en;
+            this.ibemei.Text = Properties.Settings.Default.ibe;
+            this.comboBox1.Text = Properties.Settings.Default.goog;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            Properties.Settings.Default.st = this.startbox.Text;
+            Properties.Settings.Default.en = this.endbox.Text;
+            Properties.Settings.Default.ibe = this.ibemei.Text;
+            Properties.Settings.Default.goog = this.comboBox1.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+
+            eventname.Text = ibemei.Text;
+            DateTime dt = DateTime.Now;
+            current.Text = dt.ToString();
+
+            DateTime st;//= DateTime.Parse(startbox.Text);
+            DateTime en;//= DateTime.Parse(endbox.Text);
+            string format = "yyyy/MM/dd HH:mm:ss";
+
+            if (DateTime.TryParse(startbox.Text, out st))
+            {
+
+            }
+            else {
+
+                start.Text =  "invalid date(ex: 2020/12/18 21:00 or 2020-12-18T21:00:00+09:00)";
+                elapsed.Text = "--";
+                left.Text = "--";
+                duration.Text = "--";
+
+                return;
+            }
+            if (DateTime.TryParse(endbox.Text, out en))
+            {
+
+            }
+            else {
+
+                end.Text = "invalid date(ex: 2020/12/18 21:00 or 2020-12-18T21:00:00+09:00)";
+                elapsed.Text = "--";
+
+                left.Text = "--";
+                duration.Text = "--";
+
+                return;
+            }
+
+
+            start.Text = st.ToString(format);
+            end.Text = en.ToString(format);
+
+            TimeSpan elapsedSpan = dt - st;
+
+            string dd = elapsedSpan.Days.ToString();
+            string hh = elapsedSpan.Hours.ToString();
+            string mm = elapsedSpan.Minutes.ToString();
+            string ss = elapsedSpan.Seconds.ToString();
+            if (st < dt)
+            {
+                elapsed.Text = dd + "日" + hh + "時間" +
+                mm + "分" + ss + "秒";
+            }
+            else
+            {
+
+                elapsed.Text = "開始されてません";
+            }
+
+            TimeSpan leftSpan = en - dt;
+
+            dd = leftSpan.Days.ToString();
+            hh = leftSpan.Hours.ToString();
+            mm = leftSpan.Minutes.ToString();
+            ss = leftSpan.Seconds.ToString();
+
+            if (en > dt)
+            {
+                left.Text = dd + "日" + hh + "時間" +
+                     mm + "分" + ss + "秒";
+            }
+            else
+            {
+                left.Text = "終了しています";
+            }
+
+            TimeSpan drationSpan = en - st;
+
+            dd = drationSpan.Days.ToString();
+            hh = drationSpan.Hours.ToString();
+            mm = drationSpan.TotalHours.ToString();
+
+            duration.Text = dd + "日" + hh + "時間," + mm + "時間";
+
+            double bar = (dt-st).TotalSeconds/(en-st).TotalSeconds *100;
+            bar = Math.Round(bar, 2, MidpointRounding.AwayFromZero);
+            if (bar > 100) {
+                bar = 100;
+            }
+            label1.Text = bar + "%";
+            bar = Math.Floor(bar);
+            progressBar1.Value = Convert.ToInt32(bar.ToString());
+
+        }
+
+        private void current_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void start_Click(object sender, EventArgs e)
+        private void end_Click(object sender, EventArgs e)
         {
 
         }
