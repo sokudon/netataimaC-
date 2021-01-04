@@ -35,6 +35,8 @@
             this.elapsed = new System.Windows.Forms.Label();
             this.left = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.eventname = new System.Windows.Forms.Label();
             this.end = new System.Windows.Forms.Label();
             this.start = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,9 +55,9 @@
             this.current.AutoSize = true;
             this.current.Location = new System.Drawing.Point(3, 38);
             this.current.Name = "current";
-            this.current.Size = new System.Drawing.Size(53, 12);
+            this.current.Size = new System.Drawing.Size(55, 12);
             this.current.TabIndex = 0;
-            this.current.Text = "現在時間";
+            this.current.Text = "現在時間:";
             this.current.Click += new System.EventHandler(this.current_Click);
             // 
             // startbox
@@ -81,18 +81,18 @@
             this.elapsed.AutoSize = true;
             this.elapsed.Location = new System.Drawing.Point(4, 60);
             this.elapsed.Name = "elapsed";
-            this.elapsed.Size = new System.Drawing.Size(53, 12);
+            this.elapsed.Size = new System.Drawing.Size(55, 12);
             this.elapsed.TabIndex = 4;
-            this.elapsed.Text = "経過時間";
+            this.elapsed.Text = "経過時間:";
             // 
             // left
             // 
             this.left.AutoSize = true;
             this.left.Location = new System.Drawing.Point(4, 82);
             this.left.Name = "left";
-            this.left.Size = new System.Drawing.Size(49, 12);
+            this.left.Size = new System.Drawing.Size(51, 12);
             this.left.TabIndex = 5;
-            this.left.Text = "残り時間";
+            this.left.Text = "残り時間:";
             // 
             // panel1
             // 
@@ -110,23 +110,40 @@
             this.panel1.Size = new System.Drawing.Size(432, 190);
             this.panel1.TabIndex = 6;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(389, 175);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 12);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "0%";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(5, 166);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(378, 21);
+            this.progressBar1.TabIndex = 10;
+            this.progressBar1.Value = 90;
+            // 
             // eventname
             // 
             this.eventname.AutoSize = true;
             this.eventname.Location = new System.Drawing.Point(4, 16);
             this.eventname.Name = "eventname";
-            this.eventname.Size = new System.Drawing.Size(20, 12);
+            this.eventname.Size = new System.Drawing.Size(55, 12);
             this.eventname.TabIndex = 9;
-            this.eventname.Text = "ibe";
+            this.eventname.Text = "イベント名:";
             // 
             // end
             // 
             this.end.AutoSize = true;
             this.end.Location = new System.Drawing.Point(4, 151);
             this.end.Name = "end";
-            this.end.Size = new System.Drawing.Size(53, 12);
+            this.end.Size = new System.Drawing.Size(55, 12);
             this.end.TabIndex = 8;
-            this.end.Text = "終了時間";
+            this.end.Text = "終了時間:";
             this.end.Click += new System.EventHandler(this.end_Click);
             // 
             // start
@@ -143,9 +160,9 @@
             this.duration.AutoSize = true;
             this.duration.Location = new System.Drawing.Point(4, 104);
             this.duration.Name = "duration";
-            this.duration.Size = new System.Drawing.Size(29, 12);
+            this.duration.Size = new System.Drawing.Size(50, 12);
             this.duration.TabIndex = 6;
-            this.duration.Text = "期間";
+            this.duration.Text = "イベ期間:";
             // 
             // button2
             // 
@@ -181,9 +198,14 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "プロセカ",
-            "ミリシタ",
-            "でれすて"});
+            "シャニマス",
+            "でれすて",
+            "みりした",
+            "みりした韓国",
+            "みりした中華",
+            "サイドＭ",
+            "モバマス",
+            "プロセカ"});
             this.comboBox1.Location = new System.Drawing.Point(269, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(92, 20);
@@ -195,23 +217,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(5, 166);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(378, 21);
-            this.progressBar1.TabIndex = 10;
-            this.progressBar1.Value = 90;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(389, 175);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 12);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "0%";
-            // 
             // netaform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -221,6 +226,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "netaform";
             this.Text = "netaform";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

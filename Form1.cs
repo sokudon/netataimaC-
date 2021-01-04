@@ -23,48 +23,40 @@ namespace neta
         {
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
             WebClient wc = new WebClient();
 
             wc.Encoding = Encoding.UTF8;
 
-            string proseka = "https://script.google.com/macros/s/AKfycbyQcx1oVrb6npnIptpeUpnk5NyZpljcnex9IHxboBGeMBw6qvu8/exec";
-            string miri = "https://script.google.com/macros/s/AKfycbyZbP4x6lww_pAMHd4bajB9MvCh3kY_H__E_0AKk9CBkCPJa-dK/exec";
-            string dere = "https://script.google.com/macros/s/AKfycbxxrM9jrW0bZAqDaJnlDxXeN76UOoKesi2XV9Ejw-a6Ncy_5K28sO_Row/exec";
+            //[["海へ出るつもりじゃなかったし","シャニマス","2021/01/01 0:00","2021-01-12T03:00:00.000Z"],
+            //["LIVE Carnival Wish you Happiness！！","デレステ","2021-01-01T06:00:00.000Z","2021-01-11T12:00:00.000Z"]
+            //,["なんどでも笑おう","ミリシタ","2021-01-02T06:00:00.000Z","2021-01-09T12:00:00.000Z"],["Raise the FLAG","ミリシタ","2021-01-04T06:00:00.000Z","2021-01-11T12:00:00.000Z"],["高舉旗","ミリシタ","2021-01-04T07:00:00.000Z","2021-01-11T13:00:00.000Z"],
+            //["新春来福!!正月ﾗｲﾌﾞ2021","サイドM","2020-12-30T15:00:00.000Z","2021-01-07T04:00:00.000Z"],
+            //["第57回ドリームLIVEフェスティバル 新春SP","モバマス","2020-12-31T06:00:00.000Z","2021-01-08T14:00:00.000Z"],
+            //["セカイのハッピーニューイヤー！","プロセカ","2020-12-31T06:00:00.000Z","2020-12-31T06:00:00.000Z"]]
 
-            string[] usedt ={proseka, miri, dere};
+            string url = "https://script.google.com/macros/s/AKfycbyQmmF6EGgRvfAfF8thzVnMNCRlJfh1dbYs_plQJ_9WwqzI4QR4lAjf/exec";
 
-            proseka = usedt[comboBox1.SelectedIndex];
+            //string proseka = "https://script.google.com/macros/s/AKfycbyQcx1oVrb6npnIptpeUpnk5NyZpljcnex9IHxboBGeMBw6qvu8/exec";
+            //string miri = "https://script.google.com/macros/s/AKfycbyZbP4x6lww_pAMHd4bajB9MvCh3kY_H__E_0AKk9CBkCPJa-dK/exec";
+            //string dere = "https://script.google.com/macros/s/AKfycbxxrM9jrW0bZAqDaJnlDxXeN76UOoKesi2XV9Ejw-a6Ncy_5K28sO_Row/exec";
+            //string[] usedt ={proseka, miri, dere};
 
+            
+            var selecter = comboBox1.SelectedIndex;
 
             try
             {
-                string text = wc.DownloadString(proseka);
-                string str = "[0-9]{4}.*?Z";
-                MatchCollection m = Regex.Matches(text, str);
-                int i = 0;
-                string[] ms= {"Invalid date","Invalid date"};
+                string text = wc.DownloadString(url); 
+                var obj = Codeplex.Data.DynamicJson.Parse(text);
 
-                foreach (Match mm in m)
-                {
-                    ms[i] = mm.Value;
-                    i++;
-                    if (i > 2) {
-                        break;
-                    }
-                }
-                str = "ibemie.+";
-                Match mi = Regex.Match(text, str);
-                string ibe = "event name";
-                if (mi.Success)
-                {
-                    ibe = mi.Value.Replace("ibemie=\"","").Replace("\";", "");
-                }
 
-                ibemei.Text = ibe;
-                startbox.Text = ms[0];
-                endbox.Text = ms[1];
+
+                ibemei.Text = obj[selecter][0];
+                startbox.Text = obj[selecter][2];
+                endbox.Text = obj[selecter][3];
 
 
             }
@@ -98,7 +90,7 @@ namespace neta
 
             eventname.Text = ibemei.Text;
             DateTime dt = DateTime.Now;
-            current.Text = dt.ToString();
+            current.Text = "現在時間:" + dt.ToString();
 
             DateTime st;//= DateTime.Parse(startbox.Text);
             DateTime en;//= DateTime.Parse(endbox.Text);
@@ -133,8 +125,8 @@ namespace neta
             }
 
 
-            start.Text = st.ToString(format);
-            end.Text = en.ToString(format);
+            start.Text ="開始時間:" + st.ToString(format);
+            end.Text = "終了時間:"+en.ToString(format);
 
             TimeSpan elapsedSpan = dt - st;
 
@@ -144,7 +136,7 @@ namespace neta
             string ss = elapsedSpan.Seconds.ToString();
             if (st < dt)
             {
-                elapsed.Text = dd + "日" + hh + "時間" +
+                elapsed.Text = "経過時間:"+dd + "日" + hh + "時間" +
                 mm + "分" + ss + "秒";
             }
             else
@@ -162,7 +154,7 @@ namespace neta
 
             if (en > dt)
             {
-                left.Text = dd + "日" + hh + "時間" +
+                left.Text = "残り時間:" + dd + "日" + hh + "時間" +
                      mm + "分" + ss + "秒";
             }
             else
@@ -176,12 +168,16 @@ namespace neta
             hh = drationSpan.Hours.ToString();
             mm = drationSpan.TotalHours.ToString();
 
-            duration.Text = dd + "日" + hh + "時間," + mm + "時間";
+            duration.Text = "イベ期間:"+dd + "日" + hh + "時間," + mm + "時間";
 
             double bar = (dt-st).TotalSeconds/(en-st).TotalSeconds *100;
             bar = Math.Round(bar, 2, MidpointRounding.AwayFromZero);
             if (bar > 100) {
                 bar = 100;
+            }
+            if (bar <0)
+            {
+                bar = 0;
             }
             label1.Text = bar + "%";
             bar = Math.Floor(bar);
