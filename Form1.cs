@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Net;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace neta
 {
@@ -193,6 +188,60 @@ namespace neta
         private void end_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string path = @"data.ics";
+
+            try
+            {
+                // Create the file, or overwrite if the file exists.
+                using (FileStream fs = File.Create(path))
+                {
+                    string tmp =Properties.Resources.ical;
+                    string ibemie = ibemei.Text;
+
+                    DateTime st;//= DateTime.Parse(startbox.Text);
+                    DateTime en;//= DateTime.Parse(endbox.Text);
+                    string format = "yyyyMMdd'T'HHmmssZ";
+
+                    string sst = "";
+                    string sen = "";
+                    if (DateTime.TryParse(startbox.Text, out st))
+                    {
+                        sst =st.ToUniversalTime().ToString(format);
+                    }
+                    if (DateTime.TryParse(endbox.Text, out en))
+                    {
+                        sen = en.ToUniversalTime().ToString(format);
+                    }
+                    string game = "[" + comboBox1.Text + "]";
+
+                    //= Regex.Replace("{置換対象文字列}", "{正規表現パターン}", "{置換パターン}");
+                    tmp = Regex.Replace(tmp, "SUMMARY:うづき", "SUMMARY:" + game + ibemie);
+                    tmp = Regex.Replace(tmp, "20200423T150000Z", sst);
+                    tmp = Regex.Replace(tmp, "20200424T150000Z", sen);
+                    tmp = Regex.Replace(tmp, "\\\\r\\\\n", "\r\n");
+
+                    byte[] info = new UTF8Encoding(true).GetBytes(tmp);
+                    // Add some information to the file.
+                    fs.Write(info, 0, info.Length);
+                    fs.Close();
+                }
+
+                //カレンダー起動
+                var proc = new System.Diagnostics.Process();
+
+                proc.StartInfo.FileName =path;
+                proc.StartInfo.UseShellExecute = true;
+                proc.Start();
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }

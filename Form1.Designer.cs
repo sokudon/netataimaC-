@@ -46,6 +46,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -166,7 +167,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(271, 53);
+            this.button2.Location = new System.Drawing.Point(244, 53);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 28);
             this.button2.TabIndex = 7;
@@ -184,6 +185,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.ibemei);
             this.panel2.Controls.Add(this.button2);
@@ -206,7 +208,7 @@
             "サイドＭ",
             "モバマス",
             "プロセカ"});
-            this.comboBox1.Location = new System.Drawing.Point(269, 27);
+            this.comboBox1.Location = new System.Drawing.Point(244, 14);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(92, 20);
             this.comboBox1.TabIndex = 9;
@@ -216,6 +218,16 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(340, 53);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 28);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "カレンダ-作成";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // netaform
             // 
@@ -255,6 +267,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
