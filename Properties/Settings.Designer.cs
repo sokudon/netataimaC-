@@ -85,7 +85,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("yyyy/MM/dd HH:mm:ss \'GMT\'zzz K")]
+        [global::System.Configuration.DefaultSettingValueAttribute("yyyy/MM/dd HH:mm:ss UTCzzz")]
         public string datetimeformat {
             get {
                 return ((string)(this["datetimeformat"]));
@@ -193,7 +193,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2021/01/30 16:01")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2021/01/30 16:33")]
         public string buid {
             get {
                 return ((string)(this["buid"]));

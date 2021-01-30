@@ -115,7 +115,16 @@ namespace neta
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.datetimeformat = textBox2.Text;
+            DateTime st = DateTime.Now;
+            try
+            {
+                st.ToString(textBox2.Text);
+
+                Properties.Settings.Default.datetimeformat = textBox2.Text;
+            }
+            catch (Exception ex) {
+                MessageBox.Show( ex.ToString());
+            }
         }
     }
 }

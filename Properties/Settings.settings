@@ -18,7 +18,7 @@
       <Value Profile="(Default)">dd日hh時間mm分ss秒</Value>
     </Setting>
     <Setting Name="datetimeformat" Type="System.String" Scope="User">
-      <Value Profile="(Default)">yyyy/MM/dd HH:mm:ss 'GMT'zzz K</Value>
+      <Value Profile="(Default)">yyyy/MM/dd HH:mm:ss UTCzzz</Value>
     </Setting>
     <Setting Name="useutc" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -45,7 +45,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="buid" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2021/01/30 16:01</Value>
+      <Value Profile="(Default)">2021/01/30 16:33</Value>
     </Setting>
   </Settings>
 </SettingsFile>
