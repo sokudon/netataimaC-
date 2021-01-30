@@ -16,7 +16,7 @@ namespace neta
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new netaform());
+            Application.Run(new NETA_TIMER());
         }
     }
 }

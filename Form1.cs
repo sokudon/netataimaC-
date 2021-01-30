@@ -7,9 +7,9 @@ using System.Text.RegularExpressions;
 
 namespace neta
 {
-    public partial class netaform : Form
+    public partial class NETA_TIMER : Form
     {
-        public netaform()
+        public NETA_TIMER()
         {
             InitializeComponent();
         }
@@ -34,11 +34,7 @@ namespace neta
 
             string url = "https://script.google.com/macros/s/AKfycbyQmmF6EGgRvfAfF8thzVnMNCRlJfh1dbYs_plQJ_9WwqzI4QR4lAjf/exec";
 
-            //string proseka = "https://script.google.com/macros/s/AKfycbyQcx1oVrb6npnIptpeUpnk5NyZpljcnex9IHxboBGeMBw6qvu8/exec";
-            //string miri = "https://script.google.com/macros/s/AKfycbyZbP4x6lww_pAMHd4bajB9MvCh3kY_H__E_0AKk9CBkCPJa-dK/exec";
-            //string dere = "https://script.google.com/macros/s/AKfycbxxrM9jrW0bZAqDaJnlDxXeN76UOoKesi2XV9Ejw-a6Ncy_5K28sO_Row/exec";
-            //string[] usedt ={proseka, miri, dere};
-
+     
             
             var selecter = comboBox1.SelectedIndex;
 
@@ -76,20 +72,22 @@ namespace neta
             Properties.Settings.Default.en = this.endbox.Text;
             Properties.Settings.Default.ibe = this.ibemei.Text;
             Properties.Settings.Default.goog = this.comboBox1.Text;
+
             Properties.Settings.Default.Save();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-
+            bool utc = Properties.Settings.Default.useutc;
+            bool ms = Properties.Settings.Default.usems;
+            string format = Properties.Settings.Default.datetimeformat;//"yyyy/MM/dd HH:mm:ss'(GMT'zzz')'";
             eventname.Text = ibemei.Text;
             DateTime dt = DateTime.Now;
-            current.Text = "現在時間:" + dt.ToString();
+          
 
             DateTime st;//= DateTime.Parse(startbox.Text);
             DateTime en;//= DateTime.Parse(endbox.Text);
-            string format = "yyyy/MM/dd HH:mm:ss";
 
             if (DateTime.TryParse(startbox.Text, out st))
             {
@@ -118,52 +116,69 @@ namespace neta
 
                 return;
             }
+            if (utc)
+            {
+                string rp = Properties.Settings.Default.useutch + ":" + Properties.Settings.Default.useutcm;
+                format = format.Replace("K",rp).Replace("zzz", rp).Replace("zz", Properties.Settings.Default.useutch).Replace("z", Properties.Settings.Default.useutch);
+                current.Text = "現在時間:" + dt.ToUniversalTime().AddHours(Properties.Settings.Default.useutcint).ToString(format);
+                start.Text = "開始時間:" + st.ToUniversalTime().AddHours(Properties.Settings.Default.useutcint).ToString(format);
+                end.Text = "終了時間:" + en.ToUniversalTime().AddHours(Properties.Settings.Default.useutcint).ToString(format);
+
+            }
+            else if (ms) {
+
+                TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById(Properties.Settings.Default.mstime);
+
+                DateTimeOffset ddt = DateTime.SpecifyKind(dt, DateTimeKind.Local);
+                DateTimeOffset sst = DateTime.SpecifyKind(st, DateTimeKind.Local);
+                DateTimeOffset een = DateTime.SpecifyKind(en, DateTimeKind.Local);
+
+                string formatd = getoffset(ddt, format,tzi);
+                string formats = getoffset(sst, format, tzi);
+                string formate = getoffset(een, format, tzi);
 
 
-            start.Text ="開始時間:" + st.ToString(format);
-            end.Text = "終了時間:"+en.ToString(format);
+                current.Text = "現在時間:" + TimeZoneInfo.ConvertTime(ddt, tzi).ToString(formatd);
+                start.Text = "開始時間:" + TimeZoneInfo.ConvertTime(sst, tzi).ToString(formats);
+                end.Text = "終了時間:" + TimeZoneInfo.ConvertTime(een, tzi).ToString(formate);
 
-            TimeSpan elapsedSpan = dt - st;
 
-            string dd = elapsedSpan.Days.ToString();
-            string hh = elapsedSpan.Hours.ToString();
-            string mm = elapsedSpan.Minutes.ToString();
-            string ss = elapsedSpan.Seconds.ToString();
+            }
+            else
+            {
+                current.Text = "現在時間:" + dt.ToString(format);
+                start.Text = "開始時間:" + st.ToString(format);
+                end.Text = "終了時間:" + en.ToString(format);
+            }
+
+
+
+
             if (st < dt)
             {
-                elapsed.Text = "経過時間:"+dd + "日" + hh + "時間" +
-                mm + "分" + ss + "秒";
+                TimeSpan elapsedSpan = dt - st;
+                elapsed.Text = "経過時間:"+ getleft(elapsedSpan);
             }
             else
             {
 
-                elapsed.Text = "開始されてません";
+                elapsed.Text = "イベントがまだ開始されてません";
             }
 
-            TimeSpan leftSpan = en - dt;
-
-            dd = leftSpan.Days.ToString();
-            hh = leftSpan.Hours.ToString();
-            mm = leftSpan.Minutes.ToString();
-            ss = leftSpan.Seconds.ToString();
 
             if (en > dt)
             {
-                left.Text = "残り時間:" + dd + "日" + hh + "時間" +
-                     mm + "分" + ss + "秒";
+                TimeSpan leftSpan = en - dt;
+                left.Text = "残り時間:" + getleft(leftSpan);
             }
             else
             {
-                left.Text = "終了しています";
+                left.Text = "イベントはすでに終了しています";
             }
 
             TimeSpan drationSpan = en - st;
 
-            dd = drationSpan.Days.ToString();
-            hh = drationSpan.Hours.ToString();
-            mm = drationSpan.TotalHours.ToString();
-
-            duration.Text = "イベ期間:"+dd + "日" + hh + "時間," + mm + "時間";
+            duration.Text = "イベ期間:"+ getleft(drationSpan);
 
             double bar = (dt-st).TotalSeconds/(en-st).TotalSeconds *100;
             bar = Math.Round(bar, 2, MidpointRounding.AwayFromZero);
@@ -178,6 +193,59 @@ namespace neta
             bar = Math.Floor(bar);
             progressBar1.Value = Convert.ToInt32(bar.ToString());
 
+        }
+
+        private string getoffset(DateTimeOffset dt,string format,TimeZoneInfo tz)
+        {
+            var o1 = tz.GetUtcOffset(dt);
+            string st = o1.ToString();
+
+            string rp = Regex.Replace("+" + st, ":\\d\\d$", "");
+            string rp2 = Regex.Replace("+" + st, ":\\d\\d:\\d\\d$", "");
+            rp = Regex.Replace(rp, "\\+\\-", "-");
+            rp2 = Regex.Replace(rp2, "\\+\\-", "-");
+
+            string tmp = tz.StandardName;
+
+            var DST  =tz.IsDaylightSavingTime(dt);
+            if (DST) {
+                tmp = tz.DaylightName;
+            }
+
+            format = format.Replace("zzz", rp).Replace("zz", rp2).Replace("z", rp2).Replace("K", tmp);
+
+
+            return format;
+        }
+
+        private string getleft(TimeSpan tspan)
+        {
+            string leftformat = Properties.Settings.Default.lefttimeformat;
+
+            string dd = tspan.Days.ToString();
+            string hh = tspan.Hours.ToString("00");
+            string mm = tspan.Minutes.ToString("00");
+            string ss = tspan.Seconds.ToString("00");
+
+            string h = tspan.Hours.ToString("0");
+            string m = tspan.Minutes.ToString("0");
+            string s = tspan.Seconds.ToString("0");
+
+            string ds = tspan.TotalDays.ToString("0.000");
+            string hs = tspan.TotalHours.ToString("0.000");
+
+            string MM= tspan.TotalDays.ToString("#");
+            string HH = tspan.TotalHours.ToString("#");
+
+            string[] rp = { HH, MM, ds, hs, dd, hh, mm, ss, h, m, s };
+            string[] rpb = { "HH", "MM", "ds", "hs", "dd", "hh", "mm", "ss", "h", "m", "s" };
+
+            string left = leftformat;
+            for (var i = 0; i < rp.Length; i++) {
+                left = left.Replace(rpb[i], rp[i]);
+            }
+
+            return left;
         }
 
         private void current_Click(object sender, EventArgs e)
@@ -242,6 +310,20 @@ namespace neta
             {
                 Console.WriteLine(ex.ToString());
             }
+        }
+
+        private void 時刻設定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new dtformat();
+            form2.ShowDialog();
+            form2.Dispose();
+        }
+
+        private void バージョンToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form2 = new VER();
+            form2.ShowDialog();
+            form2.Dispose();
         }
     }
 }

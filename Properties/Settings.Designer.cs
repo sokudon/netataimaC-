@@ -70,5 +70,137 @@ namespace neta.Properties {
                 this["goog"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("dd日hh時間mm分ss秒")]
+        public string lefttimeformat {
+            get {
+                return ((string)(this["lefttimeformat"]));
+            }
+            set {
+                this["lefttimeformat"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("yyyy/MM/dd HH:mm:ss \'GMT\'zzz K")]
+        public string datetimeformat {
+            get {
+                return ((string)(this["datetimeformat"]));
+            }
+            set {
+                this["datetimeformat"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool useutc {
+            get {
+                return ((bool)(this["useutc"]));
+            }
+            set {
+                this["useutc"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("(GMT+09:00)大阪、札幌、東京 東京 (標準時),M$EB")]
+        public string useutczone {
+            get {
+                return ((string)(this["useutczone"]));
+            }
+            set {
+                this["useutczone"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9")]
+        public double useutcint {
+            get {
+                return ((double)(this["useutcint"]));
+            }
+            set {
+                this["useutcint"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("09")]
+        public string useutch {
+            get {
+                return ((string)(this["useutch"]));
+            }
+            set {
+                this["useutch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("00")]
+        public string useutcm {
+            get {
+                return ((string)(this["useutcm"]));
+            }
+            set {
+                this["useutcm"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool usems {
+            get {
+                return ((bool)(this["usems"]));
+            }
+            set {
+                this["usems"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Tokyo Standard Time")]
+        public string mstime {
+            get {
+                return ((string)(this["mstime"]));
+            }
+            set {
+                this["mstime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string msstring {
+            get {
+                return ((string)(this["msstring"]));
+            }
+            set {
+                this["msstring"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2021/01/30 16:01")]
+        public string buid {
+            get {
+                return ((string)(this["buid"]));
+            }
+            set {
+                this["buid"] = value;
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace neta
 {
-    partial class netaform
+    partial class NETA_TIMER
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -47,8 +47,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.時刻設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.バージョンToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // current
@@ -106,7 +110,7 @@
             this.panel1.Controls.Add(this.current);
             this.panel1.Controls.Add(this.left);
             this.panel1.Controls.Add(this.elapsed);
-            this.panel1.Location = new System.Drawing.Point(27, 12);
+            this.panel1.Location = new System.Drawing.Point(27, 29);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(432, 190);
             this.panel1.TabIndex = 6;
@@ -191,7 +195,7 @@
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.startbox);
             this.panel2.Controls.Add(this.endbox);
-            this.panel2.Location = new System.Drawing.Point(27, 208);
+            this.panel2.Location = new System.Drawing.Point(27, 234);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(432, 100);
             this.panel2.TabIndex = 9;
@@ -230,22 +234,52 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // netaform
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.時刻設定ToolStripMenuItem,
+            this.バージョンToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(510, 26);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 時刻設定ToolStripMenuItem
+            // 
+            this.時刻設定ToolStripMenuItem.Name = "時刻設定ToolStripMenuItem";
+            this.時刻設定ToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
+            this.時刻設定ToolStripMenuItem.Text = "時刻設定";
+            this.時刻設定ToolStripMenuItem.Click += new System.EventHandler(this.時刻設定ToolStripMenuItem_Click);
+            // 
+            // バージョンToolStripMenuItem
+            // 
+            this.バージョンToolStripMenuItem.Name = "バージョンToolStripMenuItem";
+            this.バージョンToolStripMenuItem.Size = new System.Drawing.Size(80, 22);
+            this.バージョンToolStripMenuItem.Text = "バージョン";
+            this.バージョンToolStripMenuItem.Click += new System.EventHandler(this.バージョンToolStripMenuItem_Click);
+            // 
+            // NETA_TIMER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 311);
+            this.ClientSize = new System.Drawing.Size(510, 334);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "netaform";
-            this.Text = "netaform";
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "NETA_TIMER";
+            this.Text = "NETA_TIMER";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -269,6 +303,9 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 時刻設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem バージョンToolStripMenuItem;
     }
 }
 
