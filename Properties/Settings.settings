@@ -44,7 +44,7 @@
     <Setting Name="msstring" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="buid" Type="System.String" Scope="User">
+    <Setting Name="build" Type="System.String" Scope="User">
       <Value Profile="(Default)">2021/01/30 16:33</Value>
     </Setting>
   </Settings>

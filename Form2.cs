@@ -48,7 +48,7 @@ namespace neta
 
         private void VER_Load(object sender, EventArgs e)
         {
-            label3.Text = "BUIDDATE:" + Properties.Settings.Default.buid;
+            label3.Text = "BUILDDATE:" + Properties.Settings.Default.build;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -64,11 +64,11 @@ namespace neta
             {
                 var list = XDocument.Load(data);
 
-                var names = list.Descendants("setting");//.Select(p => p.Element("Url")?.Value);
+                var names = list.Descendants("setting");
 
                 foreach (var xmls in names)
                 {
-                    Match m = Regex.Match(xmls.ToString(), "name=\"goog\"");//buid
+                    Match m = Regex.Match(xmls.ToString(), "name=\"build\"");//build 
                     if (m.Success)
                     {
                         Match mm = Regex.Match(xmls.ToString(), "<value>.*?<\\/value>");//buid
@@ -77,14 +77,14 @@ namespace neta
                             DateTime app;
                             DateTime net;
                             string tmp = Regex.Replace(mm.Value, "<.*?>", "");
-                            if (DateTime.TryParse(Properties.Settings.Default.buid.Trim(), out app))
+                            if (DateTime.TryParse(Properties.Settings.Default.build.Trim(), out app))
                             { }
                             if (DateTime.TryParse(tmp, out net))
                             { }
                             TimeSpan dra = net - app;
                             if (dra.TotalSeconds > 0)
                             {
-                                MessageBox.Show("最新版があります BUIDDATE:" + net.ToString());
+                                MessageBox.Show("最新版があります BUILDDATE:" + net.ToString());
                             }
                             else {
 
