@@ -193,13 +193,25 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2021/01/30 16:48")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2021/02/03 21:07")]
         public string build {
             get {
                 return ((string)(this["build"]));
             }
             set {
                 this["build"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string json {
+            get {
+                return ((string)(this["json"]));
+            }
+            set {
+                this["json"] = value;
             }
         }
     }

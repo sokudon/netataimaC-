@@ -50,6 +50,8 @@ namespace neta
                 endbox.Text = obj[selecter][3];
 
 
+                Properties.Settings.Default.json = text;
+
             }
             catch (WebException exc)
             {
@@ -324,6 +326,30 @@ namespace neta
             var form2 = new VER();
             form2.ShowDialog();
             form2.Dispose();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var selecter = comboBox1.SelectedIndex;
+
+            try
+            {
+                if (Properties.Settings.Default.json != "") { 
+                var obj = Codeplex.Data.DynamicJson.Parse(Properties.Settings.Default.json);
+
+
+
+                ibemei.Text = obj[selecter][0];
+                startbox.Text = obj[selecter][2];
+                endbox.Text = obj[selecter][3];
+            }
+
+            }
+            catch (WebException exc)
+            {
+                endbox.Text = exc.Message;
+            }
         }
     }
 }
