@@ -65,6 +65,8 @@ namespace neta
             this.endbox.Text = Properties.Settings.Default.en;
             this.ibemei.Text = Properties.Settings.Default.ibe;
             this.comboBox1.Text = Properties.Settings.Default.goog;
+            this.progressBar1.Width = Properties.Settings.Default.barlen;
+            this.parcent.Left = Properties.Settings.Default.parcent;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -191,7 +193,7 @@ namespace neta
             {
                 bar = 0;
             }
-            label1.Text = bar + "%";
+            parcent.Text = bar + "%";
             bar = Math.Floor(bar);
             progressBar1.Value = Convert.ToInt32(bar.ToString());
 
@@ -316,8 +318,8 @@ namespace neta
 
         private void 時刻設定ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form2 = new dtformat();
-            form2.ShowDialog();
+            var form2 = new dtformat(this);
+            form2.ShowDialog(this);
             form2.Dispose();
         }
 

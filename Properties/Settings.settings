@@ -45,10 +45,16 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="build" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2021/02/03 21:07</Value>
+      <Value Profile="(Default)">2021/02/09 23:36</Value>
     </Setting>
     <Setting Name="json" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="barlen" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">390</Value>
+    </Setting>
+    <Setting Name="parcent" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">395</Value>
     </Setting>
   </Settings>
 </SettingsFile>

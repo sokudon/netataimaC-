@@ -38,6 +38,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +55,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.comboBox1);
@@ -64,7 +68,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(13, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(302, 208);
+            this.panel1.Size = new System.Drawing.Size(302, 228);
             this.panel1.TabIndex = 1;
             // 
             // comboBox2
@@ -239,11 +243,38 @@
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.ImeMode = System.Windows.Forms.ImeMode.Alpha;
+            this.comboBox3.Items.AddRange(new object[] {
+            "390",
+            "145",
+            "130",
+            "97",
+            "78"});
+            this.comboBox3.Location = new System.Drawing.Point(106, 195);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(74, 20);
+            this.comboBox3.TabIndex = 9;
+            this.comboBox3.Text = "390";
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.comboBox3.TextChanged += new System.EventHandler(this.comboBox3_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 198);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 12);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "進捗バーの長さ";
+            // 
             // dtformat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 247);
+            this.ClientSize = new System.Drawing.Size(337, 281);
             this.Controls.Add(this.panel1);
             this.Name = "dtformat";
             this.Text = "datetimeformat";
@@ -267,5 +298,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

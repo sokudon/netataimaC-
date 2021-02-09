@@ -35,7 +35,7 @@
             this.elapsed = new System.Windows.Forms.Label();
             this.left = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.parcent = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.eventname = new System.Windows.Forms.Label();
             this.end = new System.Windows.Forms.Label();
@@ -101,7 +101,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.parcent);
             this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.eventname);
             this.panel1.Controls.Add(this.end);
@@ -115,20 +115,20 @@
             this.panel1.Size = new System.Drawing.Size(432, 190);
             this.panel1.TabIndex = 6;
             // 
-            // label1
+            // parcent
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(389, 175);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 12);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "0%";
+            this.parcent.AutoSize = true;
+            this.parcent.Location = new System.Drawing.Point(395, 175);
+            this.parcent.Name = "parcent";
+            this.parcent.Size = new System.Drawing.Size(17, 12);
+            this.parcent.TabIndex = 11;
+            this.parcent.Text = "0%";
             // 
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(5, 166);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(378, 21);
+            this.progressBar1.Size = new System.Drawing.Size(390, 21);
             this.progressBar1.TabIndex = 10;
             this.progressBar1.Value = 90;
             // 
@@ -301,12 +301,12 @@
         private System.Windows.Forms.Label eventname;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 時刻設定ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem バージョンToolStripMenuItem;
+        public System.Windows.Forms.ProgressBar progressBar1;
+        public System.Windows.Forms.Label parcent;
     }
 }
 

@@ -193,7 +193,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2021/02/03 21:07")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2021/02/09 23:36")]
         public string build {
             get {
                 return ((string)(this["build"]));
@@ -212,6 +212,30 @@ namespace neta.Properties {
             }
             set {
                 this["json"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("390")]
+        public int barlen {
+            get {
+                return ((int)(this["barlen"]));
+            }
+            set {
+                this["barlen"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("395")]
+        public int parcent {
+            get {
+                return ((int)(this["parcent"]));
+            }
+            set {
+                this["parcent"] = value;
             }
         }
     }

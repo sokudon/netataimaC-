@@ -13,8 +13,11 @@ namespace neta
 {
     public partial class dtformat : Form
     {
-        public dtformat()
+        Form f1;
+
+        public dtformat(Form f)
         {
+            f1 = f; // メイン・フォームへの参照を保存
             InitializeComponent();
         }
 
@@ -33,7 +36,9 @@ namespace neta
             checkBox1.Checked = Properties.Settings.Default.useutc;
             checkBox2.Checked = Properties.Settings.Default.usems;
             comboBox1.Text = Properties.Settings.Default.useutczone;
-            comboBox2.Text = Properties.Settings.Default.msstring ;
+            comboBox2.Text = Properties.Settings.Default.msstring;
+
+            comboBox3.Text = Properties.Settings.Default.barlen.ToString();
         }
 
 
@@ -124,6 +129,41 @@ namespace neta
             }
             catch (Exception ex) {
                 MessageBox.Show( ex.ToString());
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var m = Regex.Match(comboBox3.Text, "^\\d+");
+            if (m.Success)
+            {
+                var len = Convert.ToInt32(m.Value);
+                if (len > 390) {
+                    len = 390;
+                }
+                Properties.Settings.Default.barlen = len;
+                Properties.Settings.Default.parcent = len + 5;
+                ((NETA_TIMER)this.Owner).progressBar1.Width = len;
+                ((NETA_TIMER)this.Owner).parcent.Left = len + 5;
+            }
+        }
+
+        private void comboBox3_TextChanged(object sender, EventArgs e)
+        {
+
+            var m = Regex.Match(comboBox3.Text, "^\\d+");
+            if (m.Success)
+            {
+                var len = Convert.ToInt32(m.Value);
+                if (len > 390)
+                {
+                    len = 390;
+                }
+                Properties.Settings.Default.barlen = len;
+                Properties.Settings.Default.parcent = len + 5;
+                ((NETA_TIMER)this.Owner).progressBar1.Width = len;
+                ((NETA_TIMER)this.Owner).parcent.Left = len + 5;
             }
         }
     }
