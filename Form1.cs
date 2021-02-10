@@ -353,6 +353,82 @@ namespace neta
                 endbox.Text = exc.Message;
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            WebClient wc = new WebClient();
+            wc.Encoding = Encoding.UTF8;
+            DateTime dt = DateTime.Now;
+
+            string url = Properties.Settings.Default.api.ToString().Replace("TODAY()",dt.ToString("yyyy-MM-dd"));
+            string parseop = Properties.Settings.Default.parse;
+            string text = "";
+            var erros = "";
+            try
+            {
+                text = wc.DownloadString(url);
+            }
+            catch (WebException exc)
+            {
+                MessageBox.Show(exc.Message);
+                return;
+            }
+
+            try
+            {
+                var obj = Codeplex.Data.DynamicJson.Parse(text);
+                var objorig = obj;
+                string[] op = parseop.Split(',');
+                string[] get = { "", "", "" };
+                if (text == "[]" || text == "{}")
+                {
+                    MessageBox.Show("JSONがから[] {}です,apiurlを確認してください（）");
+                    return;
+                }
+                else
+                {
+                    for (var k = 0; k < op.Length; k++)
+                    {
+                        obj = objorig;
+                        string[] path = op[k].Split('/');
+                        erros = op[k];
+                        for (var i = 1; i < path.Length;)
+                        {
+                            if (obj.IsArray)
+                            {
+                                if (obj.IsDefined(0)==false)
+                                {
+                                    break;
+                                }
+                                obj = obj[0];
+                            }
+                            else if (obj.IsObject)
+                            {
+                                obj = obj[path[i]];
+                                i++;
+                            }
+                            if (i == path.Length - 1)
+                            {
+                                if (obj.IsObject)
+                                {
+                                    get[k] = obj[path[i]];
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    ibemei.Text = get[0];
+                    startbox.Text = get[1];
+                    endbox.Text = get[2];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " エラー場所:'"+ erros +"'");
+            }
+        }
     }
 }
     

@@ -37,8 +37,9 @@ namespace neta
             checkBox2.Checked = Properties.Settings.Default.usems;
             comboBox1.Text = Properties.Settings.Default.useutczone;
             comboBox2.Text = Properties.Settings.Default.msstring;
-
             comboBox3.Text = Properties.Settings.Default.barlen.ToString();
+            textBox3.Text = Properties.Settings.Default.api;
+            textBox4.Text = Properties.Settings.Default.parse;
         }
 
 
@@ -105,8 +106,8 @@ namespace neta
 
                     Properties.Settings.Default.mstime = tm;
                 }
-                catch (Exception ex){
-                    MessageBox.Show("廃止されたタイムゾーンのため、東京に差し替えます。\r\n"+ex.ToString());
+                catch (Exception ex) {
+                    MessageBox.Show("廃止されたタイムゾーンのため、東京に差し替えます。\r\n" + ex.ToString());
                     Properties.Settings.Default.mstime = "Tokyo Standard Time";
                 }
             }
@@ -128,7 +129,7 @@ namespace neta
                 Properties.Settings.Default.datetimeformat = textBox2.Text;
             }
             catch (Exception ex) {
-                MessageBox.Show( ex.ToString());
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -165,6 +166,55 @@ namespace neta
                 ((NETA_TIMER)this.Owner).progressBar1.Width = len;
                 ((NETA_TIMER)this.Owner).parcent.Left = len + 5;
             }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            var url = "^s?https?://[ -_.!~*'()a-zA-Z0-9;/?:@&=+$,%#]+$";
+            var m = Regex.Match(textBox3.Text, url);
+            if (m.Success)
+            {
+                Properties.Settings.Default.api = textBox3.Text;
+            }
+        }
+
+
+        //mobaapi
+        //　https://pink-check.school/api/v2/events/?time=TODAY()
+        //　/content/shortName,/content/detail/beginDateTime,/content/detail/endDateTime
+
+        //miriapi
+        //　https://api.matsurihi.me/mltd/v1/events/?at=TODAY() 15:00";
+        //　/name,/schedule/beginDate,/schedule/endDate
+
+        //samplegoog
+        //　https://script.google.com/macros/s/AKfycbw__S8TqcNhP4XbwRfb0UR0KfiT0rhg7KmtOCchftmR_AsYmDJJNe8Z5g/exec
+        //　/data/name,/data/start,/data/end
+
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            var op = textBox4.Text.Split(',');
+            if (op.Length != 3)
+            {
+                MessageBox.Show("/(パス名 イベ名),/(パス名 開始),/(パス名　終了) ,カンマ区切りの対象パスが３つ必要です");
+            }
+            else{
+
+                var m = Regex.Match(op[0], "^\\/.+$");
+                var m1 = Regex.Match(op[1], "^\\/.+$");
+                var m2 = Regex.Match(op[2], "^\\/.+$");
+                if (m.Success && m1.Success &&m2.Success)
+                {
+                    Properties.Settings.Default.parse = textBox4.Text;
+                }
+        } }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            DateTime dt = DateTime.Now;
+            System.Diagnostics.Process.Start(textBox3.Text.ToString().Replace("TODAY()", dt.ToString("yyyy-MM-dd")));
         }
     }
 }

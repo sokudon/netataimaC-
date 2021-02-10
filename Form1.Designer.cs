@@ -50,6 +50,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.時刻設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.バージョンToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -189,6 +190,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.ibemei);
@@ -260,6 +262,16 @@
             this.バージョンToolStripMenuItem.Text = "バージョン";
             this.バージョンToolStripMenuItem.Click += new System.EventHandler(this.バージョンToolStripMenuItem_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(344, 14);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "カスタムJS";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // NETA_TIMER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -307,6 +319,7 @@
         private System.Windows.Forms.ToolStripMenuItem バージョンToolStripMenuItem;
         public System.Windows.Forms.ProgressBar progressBar1;
         public System.Windows.Forms.Label parcent;
+        private System.Windows.Forms.Button button3;
     }
 }
 

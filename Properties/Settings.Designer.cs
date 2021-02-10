@@ -193,7 +193,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2021/02/09 23:36")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2021/02/11  2:32")]
         public string build {
             get {
                 return ((string)(this["build"]));
@@ -236,6 +236,31 @@ namespace neta.Properties {
             }
             set {
                 this["parcent"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://script.google.com/macros/s/AKfycbw__S8TqcNhP4XbwRfb0UR0KfiT0rhg7KmtOCchft" +
+            "mR_AsYmDJJNe8Z5g/exec")]
+        public string api {
+            get {
+                return ((string)(this["api"]));
+            }
+            set {
+                this["api"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/data/name,/data/start,/data/end")]
+        public string parse {
+            get {
+                return ((string)(this["parse"]));
+            }
+            set {
+                this["parse"] = value;
             }
         }
     }
