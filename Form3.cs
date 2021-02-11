@@ -216,5 +216,14 @@ namespace neta
             DateTime dt = DateTime.Now;
             System.Diagnostics.Process.Start(textBox3.Text.ToString().Replace("TODAY()", dt.ToString("yyyy-MM-dd")));
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form4 = new Form4();
+            form4.ShowDialog();
+            form4.Dispose();
+            textBox4.Text = Properties.Settings.Default.parse;
+
+        }
     }
 }
