@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
 
 namespace neta
 {
@@ -219,6 +221,34 @@ namespace neta
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (File.Exists("Newtonsoft.Json.dll"))
+            {
+
+            }
+            else
+            {
+                string message = "JSON解析に必要なdllライブラリが不足しています。ダウンロードしますか？";
+
+                string caption = "DLLライブラリ不足";
+
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+                DialogResult result = MessageBox.Show(this, message, caption, buttons, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+
+                {
+                    string urldll = "https://github.com/sokudon/netataimaC-/raw/master/bin/Release/Newtonsoft.Json.dll";
+                    WebClient dlldl = new WebClient();
+                    dlldl.DownloadFile(urldll, "Newtonsoft.Json.dll");
+
+                }
+                else
+                {
+                    return;
+                }
+
+            }
             var form4 = new Form4();
             form4.ShowDialog();
             form4.Dispose();

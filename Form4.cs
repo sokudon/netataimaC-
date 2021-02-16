@@ -20,6 +20,8 @@ namespace neta
 
         private void button1_Click(object sender, EventArgs e)
         {
+          
+
             WebClient wc = new WebClient();
             wc.Encoding = Encoding.UTF8;
             DateTime dt = DateTime.Now;
@@ -122,6 +124,7 @@ namespace neta
             if (type == "JValue") {
                 var tmp = ((Newtonsoft.Json.Linq.JToken)info).Path;
                 tmp = Regex.Replace(tmp, "\\[\\d+\\]", "");
+                tmp = Regex.Replace(tmp, "^\\.", "");
                 tmp = Regex.Replace(tmp, "\\.", "/");
                 textBox2.Text = "/"+tmp;
             }
@@ -136,6 +139,7 @@ namespace neta
             {
                 var tmp = ((Newtonsoft.Json.Linq.JToken)info).Path;
                 tmp = Regex.Replace(tmp, "\\[\\d+\\]", "");
+                tmp = Regex.Replace(tmp, "^\\.", "");
                 tmp = Regex.Replace(tmp, "\\.", "/");
                 textBox3.Text = "/" + tmp;
             }
@@ -150,6 +154,7 @@ namespace neta
             {
                 var tmp = ((Newtonsoft.Json.Linq.JToken)info).Path;
                 tmp = Regex.Replace(tmp, "\\[\\d+\\]", "");
+                tmp = Regex.Replace(tmp, "^\\.", "");
                 tmp = Regex.Replace(tmp, "\\.", "/");
                 textBox4.Text = "/" + tmp;
             }
