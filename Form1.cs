@@ -459,6 +459,179 @@ namespace neta
                 MessageBox.Show(ex.Message + " エラー場所:'"+ erros +"'");
             }
         }
+
+        private void wEBたいまーToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DateTime st;
+            DateTime en;
+            string sst = ",";
+            string sen = ",";
+            string format = "yyyy-MM-dd'T'HH:mm:ssZ";
+            if (DateTime.TryParse(startbox.Text, out st))
+            {
+                sst = st.ToUniversalTime().ToString(format);
+                sst = Uri.EscapeDataString(sst) + ",";
+            }
+            if (DateTime.TryParse(endbox.Text, out en))
+            {
+                sen = en.ToUniversalTime().ToString(format);
+                sen = Uri.EscapeDataString(sen) + ",";
+            }
+            string gamename = Uri.EscapeDataString(ibemei.Text)+",";
+            string url = "http://sokudon.s17.xrea.com/neta/imm.html#";// NAME,START,END,OS,";
+            url = url+  gamename + sst+ sen +"OS,";
+            System.Diagnostics.Process.Start(url);
+
+        }
+
+        private void ぱいそんたいまーToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string url = "https://raw.githubusercontent.com/sokudon/deresute/master/%E3%81%B1%E3%81%84%E3%81%9D%E3%82%93%E3%81%AE%E3%81%9F%E3%81%84%E3%81%BE%E3%83%BC.py";
+            WebClient wc = new WebClient();
+            wc.Encoding = Encoding.UTF8;
+            string text = wc.DownloadString(url);
+            //ibe = 'ぷろせか'
+            //s = '2020-12-10T14:00:00+08:00'
+            //ss = '2020-12-18T12:00:00Z'
+            DateTime st;
+            DateTime en;
+            string sst = ",";
+            string sen = ",";
+            string format = "yyyy-MM-dd'T'HH:mm:ssZ";
+            if (DateTime.TryParse(startbox.Text, out st))
+            {
+                sst = st.ToUniversalTime().ToString(format);
+            }
+            if (DateTime.TryParse(endbox.Text, out en))
+            {
+                sen = en.ToUniversalTime().ToString(format);
+            }
+            text = text.Replace("ぷろせか", ibemei.Text)
+                .Replace("2020-12-10T14:00:00+08:00", sst)
+                .Replace("2020-12-18T12:00:00Z", sen);
+
+            string path = @"neta_timer.py";
+
+            try
+            {
+                // Create the file, or overwrite if the file exists.
+                using (FileStream fs = File.Create(path))
+                {
+                    byte[] info = new UTF8Encoding(true).GetBytes(text);
+                    // Add some information to the file.
+                    fs.Write(info, 0, info.Length);
+                    fs.Close();
+                }
+
+                var proc = new System.Diagnostics.Process();
+
+                proc.StartInfo.FileName = path;
+                proc.StartInfo.UseShellExecute = true;
+                proc.Start();
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+        }
+
+        private void oBSタイマーToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string url = "https://raw.githubusercontent.com/sokudon/deresute/master/OBSdere_extend.lua";
+            WebClient wc = new WebClient();
+            wc.Encoding = Encoding.UTF8;
+            string text = wc.DownloadString(url);
+            DateTime st;
+            DateTime en;
+            string sst = ",";
+            string sen = ",";
+            string format = "yyyy-MM-dd'T'HH:mm:ssZ";
+            if (DateTime.TryParse(startbox.Text, out st))
+            {
+                sst = st.ToUniversalTime().ToString(format);
+            }
+            if (DateTime.TryParse(endbox.Text, out en))
+            {
+                sen = en.ToUniversalTime().ToString(format);
+            }
+            // "start_text", "2020-04-30T12:00:00+09:00")
+            //"stop_text", "2020-05-07T21:00:00+09:00")
+            //"title_text", "でれすて")
+            //"para_text", "%T%n経過時間%K%n残り時間%L%nイベント時間%I%n現地時間%N%n日本時間%JST%n達成率%P%nS %S%nE %E%n%nSJ %SJ%nEJ %EJ%n%nSU %SU%nEU %EU")
+            //"bar", 1)
+            //"%d %hh:%mm:%ss(%hsH,%dsD)"	
+            //"日本時間%JST%n経過時間%K%n残り時間%L%nイベント時間%I%n%T%P％%n%Q"
+            //"%Y-%m-%dT%H:%M:%S%z (%a)"
+
+
+            text = text.Replace("でれすて", ibemei.Text)
+                .Replace("2020-04-30T12:00:00+09:00", sst)
+                .Replace("2020-05-07T21:00:00+09:00", sen)
+                .Replace("%H:%m:%s", "%d %hh:%mm:%ss")
+                .Replace("%Y/%m/%d %H:%M:%S", "%Y-%m-%d(%a)%H:%M:%S(GMT%z)")
+                .Replace("%T%n経過時間%K%n残り時間%L%nイベント時間%I%n現地時間%N%n日本時間%JST%n達成率%P%nS %S%nE %E%n%nSJ %SJ%nEJ %EJ%n%nSU %SU%nEU %EU", "日本時間%JST%n経過時間%K%n残り時間%L%nイベント時間%I%n%T%P％%n%Q")
+                .Replace("bar\", 1", "bar\",2");
+
+            string path = @"obs_neta_timer.lua";
+
+            try
+            {
+                // Create the file, or overwrite if the file exists.
+                using (FileStream fs = File.Create(path))
+                {
+                    byte[] info = new UTF8Encoding(true).GetBytes(text);
+                    // Add some information to the file.
+                    fs.Write(info, 0, info.Length);
+                    fs.Close();
+                }
+
+
+                var proc = new System.Diagnostics.Process();
+
+                proc.StartInfo.FileName = path;
+                proc.StartInfo.UseShellExecute = true;
+                proc.Start();
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void wEBせかいどけいToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //http://sokudon.s17.xrea.com/sekai-dere.html#%5B%E3%83%9F%E3%83%AA%E3%82%B7%E3%82%BF%5D%EC%95%84%EC%9D%B4%EB%8F%8C%EB%A7%88%EC%8A%A4%ED%84%B0%20%EB%B0%80%EB%A6%AC%EC%96%B8%20%EB%9D%BC%EC%9D%B4%EB%B8%8C!%20%EC%8B%9C%EC%96%B4%ED%84%B0%20%EB%8D%B0%EC%9D%B4%EC%A6%88%EC%9B%94%EC%9A%94%EC%9D%BC%20%ED%81%AC%EB%A6%BC%20%EC%86%8C%EB%8B%A4,2021-02-19T15%3A00%3A00%2B09%3A00,2021-02-26T21%3A00%3A00%2B09%3A00,M$E6,KST308
+            DateTime st;
+            DateTime en;
+            string sst = ",";
+            string sen = ",";
+            string format = "yyyy-MM-dd'T'HH:mm:ssZ";
+            if (DateTime.TryParse(startbox.Text, out st))
+            {
+                sst = st.ToUniversalTime().ToString(format);
+                sst = Uri.EscapeDataString(sst) + ",";
+            }
+            if (DateTime.TryParse(endbox.Text, out en))
+            {
+                sen = en.ToUniversalTime().ToString(format);
+                sen = Uri.EscapeDataString(sen) + ",";
+            }
+            string gamename = Uri.EscapeDataString(ibemei.Text) + ",";
+            string url = "http://sokudon.s17.xrea.com/sekai-dere.html#";
+            url = url + gamename + sst + sen;
+            string ms = Properties.Settings.Default.useutczone;
+            Match m = Regex.Match(ms, "M\\$.+$");
+            if (m.Success)
+            {
+                url += m.Value;
+            }
+
+            System.Diagnostics.Process.Start(url);
+
+        }
     }
 }
     

@@ -51,6 +51,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.時刻設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.バージョンToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.外部つーるへエクスポートToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wEBたいまーToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ぱいそんたいまーToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oBSタイマーToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wEBせかいどけいToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -252,6 +257,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.時刻設定ToolStripMenuItem,
+            this.外部つーるへエクスポートToolStripMenuItem,
             this.バージョンToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -272,6 +278,45 @@
             this.バージョンToolStripMenuItem.Size = new System.Drawing.Size(80, 22);
             this.バージョンToolStripMenuItem.Text = "バージョン";
             this.バージョンToolStripMenuItem.Click += new System.EventHandler(this.バージョンToolStripMenuItem_Click);
+            // 
+            // 外部つーるへエクスポートToolStripMenuItem
+            // 
+            this.外部つーるへエクスポートToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.oBSタイマーToolStripMenuItem,
+            this.ぱいそんたいまーToolStripMenuItem,
+            this.wEBたいまーToolStripMenuItem,
+            this.wEBせかいどけいToolStripMenuItem});
+            this.外部つーるへエクスポートToolStripMenuItem.Name = "外部つーるへエクスポートToolStripMenuItem";
+            this.外部つーるへエクスポートToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.外部つーるへエクスポートToolStripMenuItem.Text = "えくすぽーと";
+            // 
+            // wEBたいまーToolStripMenuItem
+            // 
+            this.wEBたいまーToolStripMenuItem.Name = "wEBたいまーToolStripMenuItem";
+            this.wEBたいまーToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.wEBたいまーToolStripMenuItem.Text = "WEBたいまー";
+            this.wEBたいまーToolStripMenuItem.Click += new System.EventHandler(this.wEBたいまーToolStripMenuItem_Click);
+            // 
+            // ぱいそんたいまーToolStripMenuItem
+            // 
+            this.ぱいそんたいまーToolStripMenuItem.Name = "ぱいそんたいまーToolStripMenuItem";
+            this.ぱいそんたいまーToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.ぱいそんたいまーToolStripMenuItem.Text = "ぱいそんたいまー";
+            this.ぱいそんたいまーToolStripMenuItem.Click += new System.EventHandler(this.ぱいそんたいまーToolStripMenuItem_Click);
+            // 
+            // oBSタイマーToolStripMenuItem
+            // 
+            this.oBSタイマーToolStripMenuItem.Name = "oBSタイマーToolStripMenuItem";
+            this.oBSタイマーToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.oBSタイマーToolStripMenuItem.Text = "OBSたいまーぷらぐいん";
+            this.oBSタイマーToolStripMenuItem.Click += new System.EventHandler(this.oBSタイマーToolStripMenuItem_Click);
+            // 
+            // wEBせかいどけいToolStripMenuItem
+            // 
+            this.wEBせかいどけいToolStripMenuItem.Name = "wEBせかいどけいToolStripMenuItem";
+            this.wEBせかいどけいToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.wEBせかいどけいToolStripMenuItem.Text = "WEBせかいどけい";
+            this.wEBせかいどけいToolStripMenuItem.Click += new System.EventHandler(this.wEBせかいどけいToolStripMenuItem_Click);
             // 
             // NETA_TIMER
             // 
@@ -321,6 +366,11 @@
         public System.Windows.Forms.ProgressBar progressBar1;
         public System.Windows.Forms.Label parcent;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripMenuItem 外部つーるへエクスポートToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wEBたいまーToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ぱいそんたいまーToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oBSタイマーToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wEBせかいどけいToolStripMenuItem;
     }
 }
 

@@ -30,8 +30,9 @@ namespace neta
 
             foreach (TimeZoneInfo z in zoneinfo)
             {
+                if (z.DisplayName.IndexOf("廃止")<0){
                 comboBox2.Items.Add(z.DisplayName + " - " + z.Id);
-            }
+            } }
 
             textBox1.Text = Properties.Settings.Default.lefttimeformat;
             textBox2.Text = Properties.Settings.Default.datetimeformat;
