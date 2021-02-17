@@ -193,7 +193,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2021/02/17  0:39")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2021/02/17 17:53")]
         public string build {
             get {
                 return ((string)(this["build"]));
@@ -242,7 +242,7 @@ namespace neta.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://script.google.com/macros/s/AKfycbw__S8TqcNhP4XbwRfb0UR0KfiT0rhg7KmtOCchft" +
-            "mR_AsYmDJJNe8Z5g/exec")]
+            "mR_AsYmDJJNe8Z5g/exec?game=all")]
         public string api {
             get {
                 return ((string)(this["api"]));
@@ -254,7 +254,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/data/name,/data/start,/data/end")]
+        [global::System.Configuration.DefaultSettingValueAttribute("/data/proseka/name,/data/proseka/start,/data/proseka/end")]
         public string parse {
             get {
                 return ((string)(this["parse"]));

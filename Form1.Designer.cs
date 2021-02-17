@@ -44,13 +44,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.ibemei = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.時刻設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.バージョンToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -202,6 +202,16 @@
             this.panel2.Size = new System.Drawing.Size(432, 100);
             this.panel2.TabIndex = 9;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(344, 14);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "カスタムJS";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(340, 53);
@@ -224,7 +234,8 @@
             "みりした韓国",
             "みりした中華",
             "サイドＭ",
-            "モバマス"});
+            "モバマス",
+            "かすたむJS"});
             this.comboBox1.Location = new System.Drawing.Point(244, 14);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(92, 20);
@@ -261,16 +272,6 @@
             this.バージョンToolStripMenuItem.Size = new System.Drawing.Size(80, 22);
             this.バージョンToolStripMenuItem.Text = "バージョン";
             this.バージョンToolStripMenuItem.Click += new System.EventHandler(this.バージョンToolStripMenuItem_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(344, 14);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "カスタムJS";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // NETA_TIMER
             // 

@@ -38,6 +38,12 @@ namespace neta
             
             var selecter = comboBox1.SelectedIndex;
 
+            if (comboBox1.Text == "かすたむJS")
+            {
+                button3_Click( sender,e);
+                return;
+            }
+
             try
             {
                 string text = wc.DownloadString(url); 
@@ -280,6 +286,7 @@ namespace neta
 
                     string sst = "";
                     string sen = "";
+                    string pend = "";
                     if (DateTime.TryParse(startbox.Text, out st))
                     {
                         sst =st.ToUniversalTime().ToString(format);
@@ -288,10 +295,24 @@ namespace neta
                     {
                         sen = en.ToUniversalTime().ToString(format);
                     }
+                    if (sen == "") {
+                        sen = sst;
+                        pend = "（※終了時間未定です）";
+                    }
+
                     string game = "[" + comboBox1.Text + "]";
+                    if (ibemie.IndexOf(game)>=0)
+                    {
+                        game = "";
+                    }
+                    if (comboBox1.Text == "かすたむJS")
+                    {
+
+                        game = "";
+                    }
 
                     //= Regex.Replace("{置換対象文字列}", "{正規表現パターン}", "{置換パターン}");
-                    tmp = Regex.Replace(tmp, "SUMMARY:うづき", "SUMMARY:" + game + ibemie);
+                    tmp = Regex.Replace(tmp, "SUMMARY:うづき", "SUMMARY:" + game + ibemie+pend);
                     tmp = Regex.Replace(tmp, "20200423T150000Z", sst);
                     tmp = Regex.Replace(tmp, "20200424T150000Z", sen);
                     tmp = Regex.Replace(tmp, "\\\\r\\\\n", "\r\n");
@@ -334,6 +355,12 @@ namespace neta
         {
 
             var selecter = comboBox1.SelectedIndex;
+
+            if (comboBox1.Text == "かすたむJS")
+            {
+                button3_Click(sender, e);
+                return;
+            }
 
             try
             {
@@ -422,6 +449,9 @@ namespace neta
                     ibemei.Text = get[0];
                     startbox.Text = get[1];
                     endbox.Text = get[2];
+                    comboBox1.Text = "かすたむJS";
+
+
                 }
             }
             catch (Exception ex)

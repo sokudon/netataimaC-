@@ -45,7 +45,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="build" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2021/02/17  0:39</Value>
+      <Value Profile="(Default)">2021/02/17 17:53</Value>
     </Setting>
     <Setting Name="json" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -57,10 +57,10 @@
       <Value Profile="(Default)">395</Value>
     </Setting>
     <Setting Name="api" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://script.google.com/macros/s/AKfycbw__S8TqcNhP4XbwRfb0UR0KfiT0rhg7KmtOCchftmR_AsYmDJJNe8Z5g/exec</Value>
+      <Value Profile="(Default)">https://script.google.com/macros/s/AKfycbw__S8TqcNhP4XbwRfb0UR0KfiT0rhg7KmtOCchftmR_AsYmDJJNe8Z5g/exec?game=all</Value>
     </Setting>
     <Setting Name="parse" Type="System.String" Scope="User">
-      <Value Profile="(Default)">/data/name,/data/start,/data/end</Value>
+      <Value Profile="(Default)">/data/proseka/name,/data/proseka/start,/data/proseka/end</Value>
     </Setting>
   </Settings>
 </SettingsFile>
