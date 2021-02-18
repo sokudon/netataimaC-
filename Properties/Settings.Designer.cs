@@ -193,7 +193,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2021/02/17 22:34")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2021/02/18 22:06")]
         public string build {
             get {
                 return ((string)(this["build"]));

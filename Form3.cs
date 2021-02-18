@@ -256,5 +256,21 @@ namespace neta
             textBox4.Text = Properties.Settings.Default.parse;
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var form5 = new Form5();
+            form5.ShowDialog();
+            form5.Dispose();
+            textBox1.Text = Properties.Settings.Default.lefttimeformat;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var form6 = new Form6();
+            form6.ShowDialog();
+            form6.Dispose();
+            textBox2.Text = Properties.Settings.Default.datetimeformat;
+        }
     }
 }
