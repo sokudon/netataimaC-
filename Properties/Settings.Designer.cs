@@ -12,7 +12,7 @@ namespace neta.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -193,7 +193,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2021/02/18 22:06")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2021/07/06 22:02")]
         public string build {
             get {
                 return ((string)(this["build"]));
@@ -261,6 +261,30 @@ namespace neta.Properties {
             }
             set {
                 this["parse"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("21\t徳川まつり")]
+        public string idol {
+            get {
+                return ((string)(this["idol"]));
+            }
+            set {
+                this["idol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public string rank {
+            get {
+                return ((string)(this["rank"]));
+            }
+            set {
+                this["rank"] = value;
             }
         }
     }

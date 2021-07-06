@@ -45,7 +45,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="build" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2021/02/18 22:06</Value>
+      <Value Profile="(Default)">2021/07/06 22:02</Value>
     </Setting>
     <Setting Name="json" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -61,6 +61,12 @@
     </Setting>
     <Setting Name="parse" Type="System.String" Scope="User">
       <Value Profile="(Default)">/data/proseka/name,/data/proseka/start,/data/proseka/end</Value>
+    </Setting>
+    <Setting Name="idol" Type="System.String" Scope="User">
+      <Value Profile="(Default)">21	徳川まつり</Value>
+    </Setting>
+    <Setting Name="rank" Type="System.String" Scope="User">
+      <Value Profile="(Default)">100</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -632,6 +632,14 @@ namespace neta
             System.Diagnostics.Process.Start(url);
 
         }
+
+        private void cmpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            var form5 = new Form5();
+            form5.ShowDialog(this);
+            form5.Dispose();
+        }
     }
 }
     
