@@ -321,10 +321,10 @@ $RM.click(function () {
     });
     $buttonal.click(function () {
 		houji("位");
-		diff=0;
+		diff=1;
     });
     $buttonmd.click(function () {
-		diff=0;
+		diff=1;
     var st=document.getElementById('seek_n').value;
     var m=st.match("^/(.+)/$");
 	if(m!=null){

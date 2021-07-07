@@ -41,7 +41,7 @@ border[i]["data"] = base[i]['data'];
 }
 
 var events;
-var ranking=get_web_para("100位");
+var ranking=get_web_para("");
 var border_data=datafilter(utc_adjust(border.concat(compare)),ranking);
 border_data=eventfilter(border_data,events)
 //convert_left_time(border_data);
@@ -99,7 +99,7 @@ for(var i=0;i<bd.length;i++){
 if(bd[i]['name'].match(reg)==null){
 bd[i].visible =false;
 }}
-		diff=1;
+		//diff=1;
 return bd
 }
 
@@ -129,20 +129,9 @@ return data;
 <body>
 <div data-highcharts-chart="0" id="container"></div>
 <div id="tbl"></div>
-<!--
-<button id="5001" class="autocompare">5001のみ</button>
-<button id="10001" class="autocompare">10001のみ</button>
-<button id="50001" class="autocompare">50001のみ</button>
--->
-<button id="501" class="autocompare">501のみ</button>
-<button id="2001" class="autocompare">2001のみ</button>
-<button id="10001" class="autocompare">10001のみ</button>
-<button id="20001" class="autocompare">20001のみ</button>
-<button id="60001" class="autocompare">60001のみ</button>
-<button id="120001" class="autocompare">120001のみ</button>
 <button id="all" class="autocompare">すべて</button>
 <form name="seek" style="display: inline">
-<input type="text" id="seek_n" value="/(^|[a-z])1位/">
+<input type="text" id="seek_n" value="/100位/">
 </form>
 <button id="md" class="autocompare">けんさく(/～/でせいきひょうげん)</button>
 <br><br>
@@ -171,16 +160,6 @@ return data;
 </select>
 </form>
 
-<br>
-<b>順位検索ブックマーク版</b><br>
-<a href="https://ss1.xrea.com/sokudon.s17.xrea.com/neta/Highstock%20compare_elapsed.html#501" target="_blank" rel="noopener">501位ブクマ版</a>
-<a href="https://ss1.xrea.com/sokudon.s17.xrea.com/neta/Highstock%20compare_elapsed.html#2001" target="_blank" rel="noopener">2001位ブクマ版</a>
-<a href="https://ss1.xrea.com/sokudon.s17.xrea.com/neta/Highstock%20compare_elapsed.html#10001" target="_blank" rel="noopener">10001位ブクマ版</a>
-<a href="https://ss1.xrea.com/sokudon.s17.xrea.com/neta/Highstock%20compare_elapsed.html#20001" target="_blank" rel="noopener">20001位ブクマ版</a>
-<a href="https://ss1.xrea.com/sokudon.s17.xrea.com/neta/Highstock%20compare_elapsed.html#60001" target="_blank" rel="noopener">60001位ブクマ版</a>
-<a href="https://ss1.xrea.com/sokudon.s17.xrea.com/neta/Highstock%20compare_elapsed.html#120001" target="_blank" rel="noopener">120001位ブクマ版</a>
-<a href="https://ss1.xrea.com/sokudon.s17.xrea.com/neta/Highstock%20compare_elapsed.html#,^\d+%E4%BD%8D,8,RM" target="_blank" rel="noopener">最新イベントのみ</a>
-<br>
 <br>
 <input type="Submit" value="URLで状態をほぞん" generate"="" onclick="url();return false">
 
