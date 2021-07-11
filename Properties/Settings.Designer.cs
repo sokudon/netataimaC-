@@ -193,7 +193,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2021/07/08 21:38")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2021/07/11 16:30")]
         public string build {
             get {
                 return ((string)(this["build"]));
@@ -285,6 +285,18 @@ namespace neta.Properties {
             }
             set {
                 this["rank"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool genzai {
+            get {
+                return ((bool)(this["genzai"]));
+            }
+            set {
+                this["genzai"] = value;
             }
         }
     }

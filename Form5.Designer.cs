@@ -46,6 +46,7 @@ namespace neta
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // comboBox2
@@ -145,7 +146,8 @@ namespace neta
             "2",
             "3",
             "10",
-            "100"});
+            "100",
+            "1000"});
             this.comboBox1.Location = new System.Drawing.Point(312, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
@@ -219,7 +221,7 @@ namespace neta
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(535, 290);
+            this.button2.Location = new System.Drawing.Point(515, 294);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(119, 23);
             this.button2.TabIndex = 13;
@@ -258,7 +260,7 @@ namespace neta
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(535, 261);
+            this.button3.Location = new System.Drawing.Point(515, 265);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(133, 23);
             this.button3.TabIndex = 18;
@@ -266,11 +268,23 @@ namespace neta
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(192, 128);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(114, 19);
+            this.checkBox1.TabIndex = 19;
+            this.checkBox1.Text = "現行のみ取得";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 329);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -315,5 +329,6 @@ namespace neta
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

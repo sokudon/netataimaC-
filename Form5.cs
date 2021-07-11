@@ -60,38 +60,37 @@ namespace neta
             string parseop = Properties.Settings.Default.parse;
             string text = ""; 
             string text2 = "";
-            try
+            if (checkBox1.Checked == false)
             {
-                text = wc.DownloadString(url);
-                File.WriteAllText(@"tmp.js", text);
-            }
-            catch (WebException exc)
-            {
-                wc.Dispose();
-                MessageBox.Show(exc.Message);
-                return;
-            }
-
-
-            try
-            {
-                text2 = wc.DownloadString(url2);
-                File.WriteAllText(@"tmp2.js", text2);
-            }
-            catch (WebException exc)
-            {
-                MessageBox.Show(exc.Message);
-                wc.Dispose();
-                return;
+                try
+                {
+                    text = wc.DownloadString(url);
+                    File.WriteAllText(@"tmp.js", text);
+                }
+                catch (WebException exc)
+                {
+                    wc.Dispose();
+                    MessageBox.Show(exc.Message);
+                    return;
+                }
             }
 
+                try
+                {
+                    text2 = wc.DownloadString(url2);
+                    File.WriteAllText(@"tmp2.js", text2);
+                }
+                catch (WebException exc)
+                {
+                    MessageBox.Show(exc.Message);
+                    wc.Dispose();
+                    return;
+                }
             wc.Dispose();
 
-            var jsonlast = Codeplex.Data.DynamicJson.Parse(text);
             var json = Codeplex.Data.DynamicJson.Parse(text2);
 
             var j = json[0];
-            var jj = jsonlast[0];
             int[] arr = j.data;
             int length = arr.Length-1;
 
@@ -99,22 +98,33 @@ namespace neta
             var finaldata = j.data[length].summaryTime;
             var finaldatas = j.data[length].score;
 
-            
-            length -= 3;
-
-            var ffinaldata = jj.data[length].summaryTime;
-            var ffinaldatas = jj.data[length].score;
-
 
             label3.Text = finaldata;
-            label4.Text = String.Format("{0:#,0}",finaldatas);
+            label4.Text = String.Format("{0:#,0}", finaldatas);
+
+            if (checkBox1.Checked == false)
+            {
+                var jsonlast = Codeplex.Data.DynamicJson.Parse(text);
+                var jj = jsonlast[0];
+                length -= 3;
+
+                var ffinaldata = jj.data[length].summaryTime;
+                var ffinaldatas = jj.data[length].score;
 
 
-            label5.Text = ffinaldata;
-            label6.Text = String.Format("{0:#,0}", ffinaldatas);
+                label5.Text = ffinaldata;
+                label6.Text = String.Format("{0:#,0}", ffinaldatas);
+                label7.Text = String.Format("{0:#,0}", finaldatas - ffinaldatas);
+            }
+            else
+            {
 
+                label5.Text = "--";
+                label6.Text = "--";
+                label7.Text = "--";
+            }
 
-            label7.Text = String.Format("{0:#,0}", finaldatas- ffinaldatas );
+         
 
         }
 
@@ -128,6 +138,9 @@ namespace neta
         {
             comboBox1.Text = Properties.Settings.Default.rank;
             comboBox2.Text = Properties.Settings.Default.idol;
+
+
+            this.checkBox1.Checked = Properties.Settings.Default.genzai;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -145,8 +158,8 @@ namespace neta
 
             url = Regex.Replace(url, "\\/\\d?\\d\\/", "/" + idol + "/");
             url2 = Regex.Replace(url2, "\\/\\d?\\d\\/", "/" + idol + "/");
-            url = Regex.Replace(url, "\\/\\d+$", "/1,2,3,10,100,1000" );
-            url2 = Regex.Replace(url2, "\\/\\d+$", "/1,2,3,10,100,1000" );
+            url = Regex.Replace(url, "\\/\\d+$", "/1,2,3,10,100,1000");
+            url2 = Regex.Replace(url2, "\\/\\d+$", "/1,2,3,10,100,1000");
 
             textBox1.Text = url;
 
@@ -160,7 +173,7 @@ namespace neta
             try
             {
                 text = wc.DownloadString(url);
-                File.WriteAllText(@"d1.js", "var bn='後" + idolname +"';var bd=" +text);
+                File.WriteAllText(@"d1.js", "var bn='後" + idolname + "';var bd=" + text);
             }
             catch (WebException exc)
             {
@@ -170,17 +183,17 @@ namespace neta
             }
 
 
-            try
-            {
-                text2 = wc.DownloadString(url2);
-                File.WriteAllText(@"d2.js","var cn='前"+idolname +"'; var data=" +text2);
-            }
-            catch (WebException exc)
-            {
-                MessageBox.Show(exc.Message);
-                wc.Dispose();
-                return;
-            }
+                try
+                {
+                    text2 = wc.DownloadString(url2);
+                    File.WriteAllText(@"d2.js", "var cn='前" + idolname + "'; var data=" + text2);
+                }
+                catch (WebException exc)
+                {
+                    MessageBox.Show(exc.Message);
+                    wc.Dispose();
+                    return;
+                } 
 
             wc.Dispose();
             System.Diagnostics.Process.Start("Highstock compare.html");
@@ -210,7 +223,7 @@ namespace neta
             string rank = comboBox1.Text;
 
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
-          
+
             for (int i = 1; i < 53; i++)
             {
 
@@ -226,38 +239,39 @@ namespace neta
                 string parseop = Properties.Settings.Default.parse;
                 string text = "";
                 string text2 = "";
-                try
+                if (checkBox1.Checked == false)
                 {
-                    text = wc.DownloadString(url);
-                    File.WriteAllText(@"tmp.js"+ i.ToString(), text);
-                }
-                catch (WebException exc)
-                {
-                    wc.Dispose();
-                    MessageBox.Show(exc.Message);
-                    return;
+                    try
+                    {
+                        text = wc.DownloadString(url);
+                        File.WriteAllText(@"tmp.js" + i.ToString(), text);
+                    }
+                    catch (WebException exc)
+                    {
+                        wc.Dispose();
+                        MessageBox.Show(exc.Message);
+                        return;
+                    }
                 }
 
-
-                try
-                {
-                    text2 = wc.DownloadString(url2);
-                    File.WriteAllText(@"tmp2.js"+i.ToString(), text2);
-                }
-                catch (WebException exc)
-                {
-                    MessageBox.Show(exc.Message);
-                    wc.Dispose();
-                    return;
+                    try
+                    {
+                        text2 = wc.DownloadString(url2);
+                        File.WriteAllText(@"tmp2.js" + i.ToString(), text2);
+                    }
+                    catch (WebException exc)
+                    {
+                        MessageBox.Show(exc.Message);
+                        wc.Dispose();
+                        return;
+                    
                 }
 
                 wc.Dispose();
 
-                var jsonlast = Codeplex.Data.DynamicJson.Parse(text);
                 var json = Codeplex.Data.DynamicJson.Parse(text2);
 
                 var j = json[0];
-                var jj = jsonlast[0];
                 int[] arr = j.data;
                 int length = arr.Length - 1;
 
@@ -265,7 +279,7 @@ namespace neta
                 var finaldata = j.data[length].summaryTime;
                 var finaldatas = j.data[length].score;
 
-                comboBox2.SelectedIndex = i-1;
+                comboBox2.SelectedIndex = i - 1;
                 sb.Append(comboBox2.Text);
                 sb.Append(" ");
                 sb.Append(finaldata);
@@ -273,19 +287,32 @@ namespace neta
                 sb.Append(finaldatas);
                 sb.Append(" ");
 
-                length -= 3;
+                if (checkBox1.Checked == false)
+                {
+                    var jsonlast = Codeplex.Data.DynamicJson.Parse(text);
+                    var jj = jsonlast[0];
 
+                    length -= 3;
                 var ffinaldata = jj.data[length].summaryTime;
                 var ffinaldatas = jj.data[length].score;
                 sb.Append(ffinaldata);
                 sb.Append(" ");
                 sb.Append(ffinaldatas);
+                sb.Append(" ");
+                sb.Append(finaldatas-ffinaldatas);
+            }
                 sb.AppendLine(); 
                 Thread.Sleep(500);
             }
             string str2 = sb.ToString();
 
-            File.WriteAllText(@"alldata.txt", str2);
+            File.WriteAllText(@"alldata"+comboBox1.Text+".txt", str2);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+            Properties.Settings.Default.genzai = this.checkBox1.Checked;
         }
     }
 }
