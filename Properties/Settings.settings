@@ -45,7 +45,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="build" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2021/07/11 16:30</Value>
+      <Value Profile="(Default)">2021/08/19 20:21</Value>
     </Setting>
     <Setting Name="json" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -70,6 +70,15 @@
     </Setting>
     <Setting Name="genzai" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="url2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://api.matsurihi.me/mltd/v1/events/192/rankings/logs/idolPoint/21/100</Value>
+    </Setting>
+    <Setting Name="timeset" Type="System.String" Scope="User">
+      <Value Profile="(Default)">----</Value>
+    </Setting>
+    <Setting Name="url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://api.matsurihi.me/mltd/v1/events/142/rankings/logs/idolPoint/21/100</Value>
     </Setting>
   </Settings>
 </SettingsFile>

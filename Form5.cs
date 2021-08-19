@@ -97,10 +97,30 @@ namespace neta
 
             var finaldata = j.data[length].summaryTime;
             var finaldatas = j.data[length].score;
+            var timeset = comboBox3.Text;
+
+            if (timeset != "----")
+            {
+                for(var i=0;i<length ; i++)
+                {
+                    var data = j.data[i].summaryTime; 
+                    string pattern =timeset;
+                    Match m= Regex.Match(data, pattern);
+                    if (m.Success) {
+
+                        finaldata = j.data[i].summaryTime;
+                        finaldatas = j.data[i].score;
+                    }
+
+                }
+
+            }
 
 
             label3.Text = finaldata;
             label4.Text = String.Format("{0:#,0}", finaldatas);
+
+            Properties.Settings.Default.url2 = this.textBox2.Text;
 
             if (checkBox1.Checked == false)
             {
@@ -111,10 +131,40 @@ namespace neta
                 var ffinaldata = jj.data[length].summaryTime;
                 var ffinaldatas = jj.data[length].score;
 
+                if (timeset != "----")
+                {
+                    int[] arr2 = jj.data;
+                    int length2 = arr.Length - 1;
+                    length += 3;
+                    if(length> length2)
+                    {
+
+                        length = length2;
+                    }
+
+                    for (var i = 0; i < length; i++)
+                    {
+                        var data = jj.data[i].summaryTime;
+                        string pattern = timeset;
+                        Match m = Regex.Match(data, pattern);
+                        if (m.Success)
+                        {
+
+                            ffinaldata = jj.data[i].summaryTime;
+                            ffinaldatas = jj.data[i].score;
+                        }
+
+                    }
+
+                }
+
 
                 label5.Text = ffinaldata;
                 label6.Text = String.Format("{0:#,0}", ffinaldatas);
                 label7.Text = String.Format("{0:#,0}", finaldatas - ffinaldatas);
+
+                Properties.Settings.Default.url = this.textBox1.Text;
+
             }
             else
             {
@@ -141,6 +191,9 @@ namespace neta
 
 
             this.checkBox1.Checked = Properties.Settings.Default.genzai;
+            this.textBox1.Text = Properties.Settings.Default.url;
+            this.textBox2.Text = Properties.Settings.Default.url2;
+            comboBox3.Text = Properties.Settings.Default.timeset;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -158,14 +211,25 @@ namespace neta
 
             url = Regex.Replace(url, "\\/\\d?\\d\\/", "/" + idol + "/");
             url2 = Regex.Replace(url2, "\\/\\d?\\d\\/", "/" + idol + "/");
+
+            string idolname = Regex.Replace(comboBox2.Text, "\\d+[ 　\\t]", "");
+
+
+            if (url2.IndexOf("eventPoint") > 0) {
+
+                url = Regex.Replace(url, "\\/\\d+$", "/100,2500,5000,10000");
+                url2 = Regex.Replace(url2, "\\/\\d+$", "/100,2500,5000,10000");
+                idolname = "いべんと";
+            }
+            else {
             url = Regex.Replace(url, "\\/\\d+$", "/1,2,3,10,100,1000");
             url2 = Regex.Replace(url2, "\\/\\d+$", "/1,2,3,10,100,1000");
+            }
 
             textBox1.Text = url;
 
             textBox2.Text = url2;
 
-            string idolname = Regex.Replace(comboBox2.Text, "\\d+[ 　\\t]", "");
 
             string parseop = Properties.Settings.Default.parse;
             string text = "";
@@ -313,6 +377,17 @@ namespace neta
         {
 
             Properties.Settings.Default.genzai = this.checkBox1.Checked;
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Properties.Settings.Default.timeset = comboBox3.Text;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

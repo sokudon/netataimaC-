@@ -193,7 +193,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2021/07/11 16:30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2021/08/19 20:21")]
         public string build {
             get {
                 return ((string)(this["build"]));
@@ -297,6 +297,42 @@ namespace neta.Properties {
             }
             set {
                 this["genzai"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://api.matsurihi.me/mltd/v1/events/192/rankings/logs/idolPoint/21/100")]
+        public string url2 {
+            get {
+                return ((string)(this["url2"]));
+            }
+            set {
+                this["url2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("----")]
+        public string timeset {
+            get {
+                return ((string)(this["timeset"]));
+            }
+            set {
+                this["timeset"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://api.matsurihi.me/mltd/v1/events/142/rankings/logs/idolPoint/21/100")]
+        public string url {
+            get {
+                return ((string)(this["url"]));
+            }
+            set {
+                this["url"] = value;
             }
         }
     }
