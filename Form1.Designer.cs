@@ -76,7 +76,7 @@
             // startbox
             // 
             this.startbox.Location = new System.Drawing.Point(16, 46);
-            this.startbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startbox.Margin = new System.Windows.Forms.Padding(4);
             this.startbox.Name = "startbox";
             this.startbox.Size = new System.Drawing.Size(281, 22);
             this.startbox.TabIndex = 1;
@@ -85,7 +85,7 @@
             // endbox
             // 
             this.endbox.Location = new System.Drawing.Point(16, 78);
-            this.endbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.endbox.Margin = new System.Windows.Forms.Padding(4);
             this.endbox.Name = "endbox";
             this.endbox.Size = new System.Drawing.Size(283, 22);
             this.endbox.TabIndex = 2;
@@ -123,7 +123,7 @@
             this.panel1.Controls.Add(this.left);
             this.panel1.Controls.Add(this.elapsed);
             this.panel1.Location = new System.Drawing.Point(36, 36);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(576, 238);
             this.panel1.TabIndex = 6;
@@ -141,7 +141,7 @@
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(7, 208);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(520, 26);
             this.progressBar1.TabIndex = 10;
@@ -191,7 +191,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(325, 66);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 35);
             this.button2.TabIndex = 7;
@@ -202,7 +202,7 @@
             // ibemei
             // 
             this.ibemei.Location = new System.Drawing.Point(15, 18);
-            this.ibemei.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ibemei.Margin = new System.Windows.Forms.Padding(4);
             this.ibemei.Name = "ibemei";
             this.ibemei.Size = new System.Drawing.Size(283, 22);
             this.ibemei.TabIndex = 8;
@@ -218,7 +218,7 @@
             this.panel2.Controls.Add(this.startbox);
             this.panel2.Controls.Add(this.endbox);
             this.panel2.Location = new System.Drawing.Point(36, 292);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(576, 125);
             this.panel2.TabIndex = 9;
@@ -226,7 +226,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(459, 18);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 29);
             this.button3.TabIndex = 11;
@@ -237,7 +237,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(453, 66);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 35);
             this.button1.TabIndex = 10;
@@ -250,7 +250,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "プロセカ",
-            "ポプマス",
+            "サイスタ",
             "シャニマス",
             "でれすて",
             "みりした",
@@ -260,7 +260,7 @@
             "モバマス",
             "かすたむJS"});
             this.comboBox1.Location = new System.Drawing.Point(325, 18);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 9;
@@ -307,28 +307,28 @@
             // oBSタイマーToolStripMenuItem
             // 
             this.oBSタイマーToolStripMenuItem.Name = "oBSタイマーToolStripMenuItem";
-            this.oBSタイマーToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.oBSタイマーToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.oBSタイマーToolStripMenuItem.Text = "OBSたいまーぷらぐいん";
             this.oBSタイマーToolStripMenuItem.Click += new System.EventHandler(this.oBSタイマーToolStripMenuItem_Click);
             // 
             // ぱいそんたいまーToolStripMenuItem
             // 
             this.ぱいそんたいまーToolStripMenuItem.Name = "ぱいそんたいまーToolStripMenuItem";
-            this.ぱいそんたいまーToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ぱいそんたいまーToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.ぱいそんたいまーToolStripMenuItem.Text = "ぱいそんたいまー";
             this.ぱいそんたいまーToolStripMenuItem.Click += new System.EventHandler(this.ぱいそんたいまーToolStripMenuItem_Click);
             // 
             // wEBたいまーToolStripMenuItem
             // 
             this.wEBたいまーToolStripMenuItem.Name = "wEBたいまーToolStripMenuItem";
-            this.wEBたいまーToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.wEBたいまーToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.wEBたいまーToolStripMenuItem.Text = "WEBたいまー";
             this.wEBたいまーToolStripMenuItem.Click += new System.EventHandler(this.wEBたいまーToolStripMenuItem_Click);
             // 
             // wEBせかいどけいToolStripMenuItem
             // 
             this.wEBせかいどけいToolStripMenuItem.Name = "wEBせかいどけいToolStripMenuItem";
-            this.wEBせかいどけいToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.wEBせかいどけいToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.wEBせかいどけいToolStripMenuItem.Text = "WEBせかいどけい";
             this.wEBせかいどけいToolStripMenuItem.Click += new System.EventHandler(this.wEBせかいどけいToolStripMenuItem_Click);
             // 
@@ -355,7 +355,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NETA_TIMER";
             this.Text = "NETA_TIMER";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
