@@ -342,6 +342,25 @@ namespace neta
 
                 var finaldata = j.data[length].summaryTime;
                 var finaldatas = j.data[length].score;
+                var timeset = comboBox3.Text;
+
+                if (timeset != "----")
+                {
+                    for (var ii = 0; ii < length; ii++)
+                    {
+                        var data = j.data[ii].summaryTime;
+                        string pattern = timeset;
+                        Match m = Regex.Match(data, pattern);
+                        if (m.Success)
+                        {
+
+                            finaldata = j.data[ii].summaryTime;
+                            finaldatas = j.data[ii].score;
+                        }
+
+                    }
+
+                }
 
                 comboBox2.SelectedIndex = i - 1;
                 sb.Append(comboBox2.Text);
@@ -359,7 +378,36 @@ namespace neta
                     length -= 3;
                 var ffinaldata = jj.data[length].summaryTime;
                 var ffinaldatas = jj.data[length].score;
-                sb.Append(ffinaldata);
+
+
+                    if (timeset != "----")
+                    {
+                        int[] arr2 = jj.data;
+                        int length2 = arr.Length - 1;
+                        length += 3;
+                        if (length > length2)
+                        {
+
+                            length = length2;
+                        }
+
+                        for (var ii = 0; ii < length; ii++)
+                        {
+                            var data = jj.data[ii].summaryTime;
+                            string pattern = timeset;
+                            Match m = Regex.Match(data, pattern);
+                            if (m.Success)
+                            {
+
+                                ffinaldata = jj.data[ii].summaryTime;
+                                ffinaldatas = jj.data[ii].score;
+                            }
+
+                        }
+
+                    }
+
+                    sb.Append(ffinaldata);
                 sb.Append(" ");
                 sb.Append(ffinaldatas);
                 sb.Append(" ");

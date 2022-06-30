@@ -120,7 +120,7 @@ namespace neta
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(614, 22);
             this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "https://api.matsurihi.me/mltd/v1/events/142/rankings/logs/idolPoint/21/100";
+            this.textBox1.Text = "https://api.matsurihi.me/mltd/v1/events/192/rankings/logs/idolPoint/21/100";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
@@ -129,7 +129,7 @@ namespace neta
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(614, 22);
             this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "https://api.matsurihi.me/mltd/v1/events/192/rankings/logs/idolPoint/21/100";
+            this.textBox2.Text = "https://api.matsurihi.me/mltd/v1/events/241/rankings/logs/idolPoint/21/100";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
