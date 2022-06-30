@@ -90,6 +90,15 @@ namespace neta
 
             var json = Codeplex.Data.DynamicJson.Parse(text2);
 
+            if (text2 == "[]")
+            {
+                label3.Text = "--";
+                label4.Text = "--";
+                label5.Text = "";
+                label6.Text = "";
+                label7.Text = "";
+                return;
+            }
             var j = json[0];
             int[] arr = j.data;
             int length = arr.Length-1;
@@ -335,6 +344,18 @@ namespace neta
 
                 var json = Codeplex.Data.DynamicJson.Parse(text2);
 
+                comboBox2.SelectedIndex = i - 1;
+                if (text2 == "[]")
+                {
+                    sb.Append(comboBox2.Text);
+                    sb.Append(" ");
+                    sb.Append("--");
+                    sb.Append(" ");
+                    sb.Append("--");
+                    sb.Append(" ");
+                    sb.AppendLine();
+                    continue;
+                }
                 var j = json[0];
                 int[] arr = j.data;
                 int length = arr.Length - 1;
@@ -362,7 +383,6 @@ namespace neta
 
                 }
 
-                comboBox2.SelectedIndex = i - 1;
                 sb.Append(comboBox2.Text);
                 sb.Append(" ");
                 sb.Append(finaldata);
@@ -407,7 +427,7 @@ namespace neta
 
                     }
 
-                    sb.Append(ffinaldata);
+                sb.Append(ffinaldata);
                 sb.Append(" ");
                 sb.Append(ffinaldatas);
                 sb.Append(" ");
