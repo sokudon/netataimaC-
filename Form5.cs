@@ -110,7 +110,7 @@ namespace neta
 
             if (timeset != "----")
             {
-                for(var i=0;i<length ; i++)
+                for(var i= length; i>0 ; i--)
                 {
                     var data = j.data[i].summaryTime; 
                     string pattern =timeset;
@@ -119,6 +119,7 @@ namespace neta
 
                         finaldata = j.data[i].summaryTime;
                         finaldatas = j.data[i].score;
+                        break;
                     }
 
                 }
@@ -144,14 +145,8 @@ namespace neta
                 {
                     int[] arr2 = jj.data;
                     int length2 = arr.Length - 1;
-                    length += 3;
-                    if(length> length2)
-                    {
 
-                        length = length2;
-                    }
-
-                    for (var i = 0; i < length; i++)
+                    for (var i = length2; i >0; i--)
                     {
                         var data = jj.data[i].summaryTime;
                         string pattern = timeset;
@@ -161,6 +156,7 @@ namespace neta
 
                             ffinaldata = jj.data[i].summaryTime;
                             ffinaldatas = jj.data[i].score;
+                            break;
                         }
 
                     }
@@ -367,7 +363,7 @@ namespace neta
 
                 if (timeset != "----")
                 {
-                    for (var ii = 0; ii < length; ii++)
+                    for (var ii = length; ii >0; ii--)
                     {
                         var data = j.data[ii].summaryTime;
                         string pattern = timeset;
@@ -377,6 +373,7 @@ namespace neta
 
                             finaldata = j.data[ii].summaryTime;
                             finaldatas = j.data[ii].score;
+                            break;
                         }
 
                     }
@@ -404,14 +401,9 @@ namespace neta
                     {
                         int[] arr2 = jj.data;
                         int length2 = arr.Length - 1;
-                        length += 3;
-                        if (length > length2)
-                        {
 
-                            length = length2;
-                        }
 
-                        for (var ii = 0; ii < length; ii++)
+                        for (var ii = length2; ii >0; ii--)
                         {
                             var data = jj.data[ii].summaryTime;
                             string pattern = timeset;
@@ -421,6 +413,7 @@ namespace neta
 
                                 ffinaldata = jj.data[ii].summaryTime;
                                 ffinaldatas = jj.data[ii].score;
+                                break;
                             }
 
                         }
