@@ -102,30 +102,40 @@ namespace neta
             var j = json[0];
             int[] arr = j.data;
             int length = arr.Length-1;
-
-
-            var finaldata = j.data[length].summaryTime;
-            var finaldatas = j.data[length].score;
+            var finaldata = "----";
+            double finaldatas =0;
             var timeset = comboBox3.Text;
 
-            if (timeset != "----")
-            {
-                for(var i= length; i>0 ; i--)
-                {
-                    var data = j.data[i].summaryTime; 
-                    string pattern =timeset;
-                    Match m= Regex.Match(data, pattern);
-                    if (m.Success) {
+            if (length<0) {
 
-                        finaldata = j.data[i].summaryTime;
-                        finaldatas = j.data[i].score;
-                        break;
+
+                label3.Text = finaldata;
+                label4.Text = String.Format("{0:#,0}", finaldatas);
+
+            }
+            else
+            {
+               finaldata = j.data[length].summaryTime;
+               finaldatas = j.data[length].score;
+
+                if (timeset != "----")
+                {
+                    for (var i = length; i > 0; i--)
+                    {
+                        var data = j.data[i].summaryTime;
+                        string pattern = timeset;
+                        Match m = Regex.Match(data, pattern);
+                        if (m.Success)
+                        {
+
+                            finaldata = j.data[i].summaryTime;
+                            finaldatas = j.data[i].score;
+                            break;
+                        }
+
                     }
 
                 }
-
-            }
-
 
             label3.Text = finaldata;
             label4.Text = String.Format("{0:#,0}", finaldatas);
@@ -177,9 +187,10 @@ namespace neta
                 label5.Text = "--";
                 label6.Text = "--";
                 label7.Text = "--";
+                }
             }
 
-         
+
 
         }
 
@@ -291,9 +302,10 @@ namespace neta
             string idol = (comboBox2.SelectedIndex + 1).ToString();
             string rank = comboBox1.Text;
 
+
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
-            for (int i = 1; i < 53; i++)
+            for (int i = 1; i <53; i++) //53
             {
 
                 url = Regex.Replace(url, "\\/\\d?\\d\\/", "/" + i.ToString() + "/");
@@ -355,29 +367,41 @@ namespace neta
                 var j = json[0];
                 int[] arr = j.data;
                 int length = arr.Length - 1;
-
-
-                var finaldata = j.data[length].summaryTime;
-                var finaldatas = j.data[length].score;
+                var finaldata = "----";
+                double finaldatas =0 ;
                 var timeset = comboBox3.Text;
 
-                if (timeset != "----")
+                if (length <0)
                 {
-                    for (var ii = length; ii >0; ii--)
-                    {
-                        var data = j.data[ii].summaryTime;
-                        string pattern = timeset;
-                        Match m = Regex.Match(data, pattern);
-                        if (m.Success)
-                        {
 
-                            finaldata = j.data[ii].summaryTime;
-                            finaldatas = j.data[ii].score;
-                            break;
+
+
+                }
+                else
+                {
+
+
+                    finaldata = j.data[length].summaryTime;
+                    finaldatas = j.data[length].score;
+
+                    if (timeset != "----")
+                    {
+                        for (var ii = length; ii > 0; ii--)
+                        {
+                            var data = j.data[ii].summaryTime;
+                            string pattern = timeset;
+                            Match m = Regex.Match(data, pattern);
+                            if (m.Success)
+                            {
+
+                                finaldata = j.data[ii].summaryTime;
+                                finaldatas = j.data[ii].score;
+                                break;
+                            }
+
                         }
 
                     }
-
                 }
 
                 sb.Append(comboBox2.Text);

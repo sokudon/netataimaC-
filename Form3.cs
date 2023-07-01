@@ -30,9 +30,9 @@ namespace neta
 
             foreach (TimeZoneInfo z in zoneinfo)
             {
-                if (z.DisplayName.IndexOf("廃止")<0){
-                comboBox2.Items.Add(z.DisplayName + " - " + z.Id);
-            } }
+                if (z.DisplayName.IndexOf("廃止") < 0) {
+                    comboBox2.Items.Add(z.DisplayName + " - " + z.Id);
+                } }
 
             textBox1.Text = Properties.Settings.Default.lefttimeformat;
             textBox2.Text = Properties.Settings.Default.datetimeformat;
@@ -174,11 +174,13 @@ namespace neta
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             var url = "^s?https?://[ -_.!~*'()a-zA-Z0-9;/?:@&=+$,%#]+$";
-            var m = Regex.Match(textBox3.Text, url);
-            if (m.Success)
-            {
-                Properties.Settings.Default.api = textBox3.Text;
-            }
+        
+                var m = Regex.Match(textBox3.Text, url);
+                if (m.Success)
+                {
+                    Properties.Settings.Default.api = textBox3.Text;
+                }
+           
         }
 
 
@@ -202,16 +204,20 @@ namespace neta
             {
                 MessageBox.Show("/(パス名 イベ名),/(パス名 開始),/(パス名　終了) ,カンマ区切りの対象パスが３つ必要です");
             }
-            else{
+            else
+            {
 
                 var m = Regex.Match(op[0], "^\\/.+$");
                 var m1 = Regex.Match(op[1], "^\\/.+$");
                 var m2 = Regex.Match(op[2], "^\\/.+$");
-                if (m.Success && m1.Success &&m2.Success)
-                {
-                    Properties.Settings.Default.parse = textBox4.Text;
-                }
-        } }
+
+               
+                    if (m.Success && m1.Success && m2.Success)
+                    {
+                        Properties.Settings.Default.parse = textBox4.Text;
+                    }
+            }
+        }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -252,18 +258,35 @@ namespace neta
             }
             var form4 = new Form4();
             form4.ShowDialog();
-            form4.Dispose();
-            textBox4.Text = Properties.Settings.Default.parse;
+            form4.Dispose(); if (SLOT.SelectedIndex == 1)
+            {
+                textBox4.Text = Properties.Settings.Default.parse;
+            }
+            else {
+
+                textBox4.Text = Properties.Settings.Default.parse2;
+            }
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-       
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SLOT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.slot = SLOT.SelectedIndex;
+
         }
     }
 }

@@ -249,22 +249,17 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "プロセカ",
-            "サイスタ",
             "シャニマス",
             "でれすて",
             "みりした",
-            "みりした韓国",
-            "みりした中華",
-            "サイドＭ",
-            "モバマス",
+            "プロセカ",
             "かすたむJS"});
             this.comboBox1.Location = new System.Drawing.Point(325, 18);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 9;
-            this.comboBox1.Text = "プロセカ";
+            this.comboBox1.Text = "シャニマス";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // timer1

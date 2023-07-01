@@ -120,7 +120,7 @@ namespace neta
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(614, 22);
             this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "https://api.matsurihi.me/mltd/v1/events/192/rankings/logs/idolPoint/21/100";
+            this.textBox1.Text = "https://api.matsurihi.me/mltd/v1/events/241/rankings/logs/idolPoint/21/100";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
@@ -129,17 +129,17 @@ namespace neta
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(614, 22);
             this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "https://api.matsurihi.me/mltd/v1/events/241/rankings/logs/idolPoint/21/100";
+            this.textBox2.Text = "https://api.matsurihi.me/mltd/v1/events/290/rankings/logs/idolPoint/21/100";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 56);
+            this.label1.Location = new System.Drawing.Point(14, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 15);
+            this.label1.Size = new System.Drawing.Size(37, 15);
             this.label1.TabIndex = 4;
-            this.label1.Text = "3rd";
+            this.label1.Text = "去年";
             // 
             // comboBox1
             // 
@@ -166,11 +166,11 @@ namespace neta
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 84);
+            this.label2.Location = new System.Drawing.Point(12, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 15);
+            this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 6;
-            this.label2.Text = "4th";
+            this.label2.Text = "今年";
             // 
             // button1
             // 

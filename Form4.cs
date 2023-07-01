@@ -169,7 +169,9 @@ namespace neta
             var m2 = Regex.Match(textBox4.Text, "^\\/.+$");
             if (m.Success && m1.Success && m2.Success)
             {
-                Properties.Settings.Default.parse = textBox2.Text+","+textBox3.Text+","+ textBox4.Text;
+              
+                    Properties.Settings.Default.parse = textBox2.Text + "," + textBox3.Text + "," + textBox4.Text;
+              
             }
         }
 

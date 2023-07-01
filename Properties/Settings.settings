@@ -45,7 +45,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="build" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2022/07/01 18:09</Value>
+      <Value Profile="(Default)">2023/07/01 14:37</Value>
     </Setting>
     <Setting Name="json" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -57,7 +57,7 @@
       <Value Profile="(Default)">395</Value>
     </Setting>
     <Setting Name="api" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://script.google.com/macros/s/AKfycbw__S8TqcNhP4XbwRfb0UR0KfiT0rhg7KmtOCchftmR_AsYmDJJNe8Z5g/exec?game=all</Value>
+      <Value Profile="(Default)">https://script.google.com/macros/s/AKfycbwi9WavekyZWoHHi0zZ8UDXtY-0zqPQymnnUCBTLfk52dNuzUuWB44AG950aQRYFySdZw/exec?game=all</Value>
     </Setting>
     <Setting Name="parse" Type="System.String" Scope="User">
       <Value Profile="(Default)">/data/proseka/name,/data/proseka/start,/data/proseka/end</Value>
@@ -72,13 +72,22 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="url2" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://api.matsurihi.me/mltd/v1/events/192/rankings/logs/idolPoint/21/100</Value>
+      <Value Profile="(Default)">https://api.matsurihi.me/mltd/v1/events/290/rankings/logs/idolPoint/21/100</Value>
     </Setting>
     <Setting Name="timeset" Type="System.String" Scope="User">
       <Value Profile="(Default)">----</Value>
     </Setting>
     <Setting Name="url" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://api.matsurihi.me/mltd/v1/events/142/rankings/logs/idolPoint/21/100</Value>
+      <Value Profile="(Default)">https://api.matsurihi.me/mltd/v1/events/241/rankings/logs/idolPoint/21/100</Value>
+    </Setting>
+    <Setting Name="api2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://script.google.com/macros/s/AKfycbwi9WavekyZWoHHi0zZ8UDXtY-0zqPQymnnUCBTLfk52dNuzUuWB44AG950aQRYFySdZw/exec?game=all</Value>
+    </Setting>
+    <Setting Name="parse2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/data/proseka/name,/data/proseka/start,/data/proseka/end</Value>
+    </Setting>
+    <Setting Name="slot" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
     </Setting>
   </Settings>
 </SettingsFile>

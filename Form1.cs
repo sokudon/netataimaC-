@@ -25,22 +25,21 @@ namespace neta
 
             wc.Encoding = Encoding.UTF8;
 
-            //[["海へ出るつもりじゃなかったし","シャニマス","2021/01/01 0:00","2021-01-12T03:00:00.000Z"],
-            //["LIVE Carnival Wish you Happiness！！","デレステ","2021-01-01T06:00:00.000Z","2021-01-11T12:00:00.000Z"]
-            //,["なんどでも笑おう","ミリシタ","2021-01-02T06:00:00.000Z","2021-01-09T12:00:00.000Z"],["Raise the FLAG","ミリシタ","2021-01-04T06:00:00.000Z","2021-01-11T12:00:00.000Z"],["高舉旗","ミリシタ","2021-01-04T07:00:00.000Z","2021-01-11T13:00:00.000Z"],
-            //["新春来福!!正月ﾗｲﾌﾞ2021","サイドM","2020-12-30T15:00:00.000Z","2021-01-07T04:00:00.000Z"],
-            //["第57回ドリームLIVEフェスティバル 新春SP","モバマス","2020-12-31T06:00:00.000Z","2021-01-08T14:00:00.000Z"],
-            //["セカイのハッピーニューイヤー！","プロセカ","2020-12-31T06:00:00.000Z","2020-12-31T06:00:00.000Z"]]
 
-            string url = "https://script.google.com/macros/s/AKfycbyQmmF6EGgRvfAfF8thzVnMNCRlJfh1dbYs_plQJ_9WwqzI4QR4lAjf/exec";
 
-     
-            
+            string url = "https://script.google.com/macros/s/AKfycbwD5mN2t2Bc2cKlu653rhs2VOJ2v1o4RuYSJq8E0WT1HvWw3ZlUMWjCm-R2Vvh7zmY/exec";
+
+
             var selecter = comboBox1.SelectedIndex;
 
             if (comboBox1.Text == "かすたむJS")
             {
                 button3_Click( sender,e);
+                return;
+            }
+            if (comboBox1.Text == "かすたむJS2")
+            {
+                button3_Click(sender, e);
                 return;
             }
 
@@ -357,6 +356,11 @@ namespace neta
             var selecter = comboBox1.SelectedIndex;
 
             if (comboBox1.Text == "かすたむJS")
+            {
+                button3_Click(sender, e);
+                return;
+            }
+            if (comboBox1.Text == "かすたむJS2")
             {
                 button3_Click(sender, e);
                 return;

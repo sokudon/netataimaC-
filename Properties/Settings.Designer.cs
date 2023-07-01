@@ -193,7 +193,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2022/07/01 18:09")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2023/07/01 14:37")]
         public string build {
             get {
                 return ((string)(this["build"]));
@@ -241,8 +241,8 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://script.google.com/macros/s/AKfycbw__S8TqcNhP4XbwRfb0UR0KfiT0rhg7KmtOCchft" +
-            "mR_AsYmDJJNe8Z5g/exec?game=all")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://script.google.com/macros/s/AKfycbwi9WavekyZWoHHi0zZ8UDXtY-0zqPQymnnUCBTLf" +
+            "k52dNuzUuWB44AG950aQRYFySdZw/exec?game=all")]
         public string api {
             get {
                 return ((string)(this["api"]));
@@ -302,7 +302,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://api.matsurihi.me/mltd/v1/events/192/rankings/logs/idolPoint/21/100")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://api.matsurihi.me/mltd/v1/events/290/rankings/logs/idolPoint/21/100")]
         public string url2 {
             get {
                 return ((string)(this["url2"]));
@@ -326,13 +326,50 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://api.matsurihi.me/mltd/v1/events/142/rankings/logs/idolPoint/21/100")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://api.matsurihi.me/mltd/v1/events/241/rankings/logs/idolPoint/21/100")]
         public string url {
             get {
                 return ((string)(this["url"]));
             }
             set {
                 this["url"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://script.google.com/macros/s/AKfycbwi9WavekyZWoHHi0zZ8UDXtY-0zqPQymnnUCBTLf" +
+            "k52dNuzUuWB44AG950aQRYFySdZw/exec?game=all")]
+        public string api2 {
+            get {
+                return ((string)(this["api2"]));
+            }
+            set {
+                this["api2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/data/proseka/name,/data/proseka/start,/data/proseka/end")]
+        public string parse2 {
+            get {
+                return ((string)(this["parse2"]));
+            }
+            set {
+                this["parse2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int slot {
+            get {
+                return ((int)(this["slot"]));
+            }
+            set {
+                this["slot"] = value;
             }
         }
     }
