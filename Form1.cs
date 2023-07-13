@@ -18,16 +18,14 @@ namespace neta
         {
         }
 
+        string url = "https://script.google.com/macros/s/AKfycbxiN0USvNN0hQyO5b3Ep_oJy_qQxCRAlT4NU954QXKYZ6GrGyzsBnhi8RgMHLZHct-QJg/exec";
+        string[] game = { "shanimasu", "deresute", "mirsita", "proseka", "saisuta", "mirikr", "miricn", "sidem", "mobamasu" };
 
         private void button2_Click(object sender, EventArgs e)
         {
             WebClient wc = new WebClient();
 
             wc.Encoding = Encoding.UTF8;
-
-
-
-            string url = "https://script.google.com/macros/s/AKfycbwD5mN2t2Bc2cKlu653rhs2VOJ2v1o4RuYSJq8E0WT1HvWw3ZlUMWjCm-R2Vvh7zmY/exec";
 
 
             var selecter = comboBox1.SelectedIndex;
@@ -37,22 +35,19 @@ namespace neta
                 button3_Click( sender,e);
                 return;
             }
-            if (comboBox1.Text == "かすたむJS2")
-            {
-                button3_Click(sender, e);
-                return;
-            }
+          
 
             try
             {
-                string text = wc.DownloadString(url); 
+               var  url2 = url + "?game=" + game[selecter];
+                string text = wc.DownloadString(url2); 
                 var obj = Codeplex.Data.DynamicJson.Parse(text);
 
 
 
-                ibemei.Text = obj[selecter][0];
-                startbox.Text = obj[selecter][2];
-                endbox.Text = obj[selecter][3];
+                ibemei.Text = obj.data.name;
+                startbox.Text = obj.data.start;
+                endbox.Text = obj.data.end;
 
 
                 Properties.Settings.Default.json = text;
@@ -353,14 +348,8 @@ namespace neta
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            var selecter = comboBox1.SelectedIndex;
 
             if (comboBox1.Text == "かすたむJS")
-            {
-                button3_Click(sender, e);
-                return;
-            }
-            if (comboBox1.Text == "かすたむJS2")
             {
                 button3_Click(sender, e);
                 return;
@@ -368,15 +357,25 @@ namespace neta
 
             try
             {
-                if (Properties.Settings.Default.json != "") { 
-                var obj = Codeplex.Data.DynamicJson.Parse(Properties.Settings.Default.json);
+
+
+                var selecter = comboBox1.SelectedIndex;
+                WebClient wc = new WebClient();
+
+                wc.Encoding = Encoding.UTF8;
+               var  url2 = url + "?game=" + game[selecter];
+                string text = wc.DownloadString(url2);
+                var obj = Codeplex.Data.DynamicJson.Parse(text);
 
 
 
-                ibemei.Text = obj[selecter][0];
-                startbox.Text = obj[selecter][2];
-                endbox.Text = obj[selecter][3];
-            }
+                ibemei.Text = obj.data.name;
+                startbox.Text = obj.data.start;
+                endbox.Text = obj.data.end;
+
+
+                Properties.Settings.Default.json = text;
+                wc.Dispose();
 
             }
             catch (WebException exc)

@@ -241,8 +241,8 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://script.google.com/macros/s/AKfycbwi9WavekyZWoHHi0zZ8UDXtY-0zqPQymnnUCBTLf" +
-            "k52dNuzUuWB44AG950aQRYFySdZw/exec?game=all")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://script.google.com/macros/s/AKfycbxiN0USvNN0hQyO5b3Ep_oJy_qQxCRAlT4NU954QX" +
+            "KYZ6GrGyzsBnhi8RgMHLZHct-QJg/exec?game=all")]
         public string api {
             get {
                 return ((string)(this["api"]));
@@ -338,8 +338,8 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://script.google.com/macros/s/AKfycbwi9WavekyZWoHHi0zZ8UDXtY-0zqPQymnnUCBTLf" +
-            "k52dNuzUuWB44AG950aQRYFySdZw/exec?game=all")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://script.google.com/macros/s/AKfycbxiN0USvNN0hQyO5b3Ep_oJy_qQxCRAlT4NU954QX" +
+            "KYZ6GrGyzsBnhi8RgMHLZHct-QJg/exec?game=all")]
         public string api2 {
             get {
                 return ((string)(this["api2"]));

@@ -30,11 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SLOT = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -45,8 +47,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.SLOT = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -78,21 +78,36 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(17, 34);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(403, 356);
             this.panel1.TabIndex = 1;
             // 
-            // button1
+            // SLOT
             // 
-            this.button1.Location = new System.Drawing.Point(316, 52);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 29);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "🎄";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SLOT.FormattingEnabled = true;
+            this.SLOT.Items.AddRange(new object[] {
+            "SLOT１",
+            "SLOT２"});
+            this.SLOT.Location = new System.Drawing.Point(284, 236);
+            this.SLOT.Name = "SLOT";
+            this.SLOT.Size = new System.Drawing.Size(87, 23);
+            this.SLOT.TabIndex = 19;
+            this.SLOT.Text = "SLOT1";
+            this.SLOT.Visible = false;
+            this.SLOT.SelectedIndexChanged += new System.EventHandler(this.SLOT_SelectedIndexChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.linkLabel1);
+            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(21, 265);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(379, 85);
+            this.panel2.TabIndex = 20;
             // 
             // linkLabel1
             // 
@@ -106,6 +121,38 @@
             this.linkLabel1.Text = "かすたむJS";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(78, 25);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(277, 22);
+            this.textBox3.TabIndex = 11;
+            this.textBox3.Text = "https://script.google.com/macros/s/AKfycbxiN0USvNN0hQyO5b3Ep_oJy_qQxCRAlT4NU954QX" +
+    "KYZ6GrGyzsBnhi8RgMHLZHct-QJg/exec?game=all";
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(316, 52);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 29);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "🎄";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(84, 54);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(231, 22);
+            this.textBox4.TabIndex = 12;
+            this.textBox4.Text = "/data/name,/data/start,/data/end";
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -116,27 +163,6 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "パース対象";
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(84, 54);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(231, 22);
-            this.textBox4.TabIndex = 12;
-            this.textBox4.Text = "/data/name,/data/start,/data/end";
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(78, 25);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(277, 22);
-            this.textBox3.TabIndex = 11;
-            this.textBox3.Text = "https://script.google.com/macros/s/AKfycbwi9WavekyZWoHHi0zZ8UDXtY-0zqPQymnnUCBTLf" +
-    "k52dNuzUuWB44AG950aQRYFySdZw/exec?game=all";
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
@@ -159,7 +185,7 @@
             "97",
             "78"});
             this.comboBox3.Location = new System.Drawing.Point(141, 240);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(97, 23);
             this.comboBox3.TabIndex = 9;
@@ -173,7 +199,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.comboBox2.Location = new System.Drawing.Point(31, 198);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(355, 23);
             this.comboBox2.TabIndex = 8;
@@ -183,7 +209,7 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(31, 170);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(234, 19);
             this.checkBox2.TabIndex = 7;
@@ -292,7 +318,7 @@
             "(GMT-04:00)Asuncion パラグアイ標準時,M$80000051",
             "(GMT+12:00)Petropavlovsk Kamchatsky カムチャツカ標準時,M$80000052"});
             this.comboBox1.Location = new System.Drawing.Point(31, 124);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(355, 23);
             this.comboBox1.TabIndex = 6;
@@ -302,7 +328,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(31, 102);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(262, 19);
             this.checkBox1.TabIndex = 5;
@@ -322,7 +348,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(108, 60);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(244, 22);
             this.textBox2.TabIndex = 3;
@@ -341,37 +367,11 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(105, 14);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(247, 22);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // SLOT
-            // 
-            this.SLOT.FormattingEnabled = true;
-            this.SLOT.Items.AddRange(new object[] {
-            "SLOT１",
-            "SLOT２"});
-            this.SLOT.Location = new System.Drawing.Point(284, 236);
-            this.SLOT.Name = "SLOT";
-            this.SLOT.Size = new System.Drawing.Size(87, 23);
-            this.SLOT.TabIndex = 19;
-            this.SLOT.Text = "SLOT1";
-            this.SLOT.Visible = false;
-            this.SLOT.SelectedIndexChanged += new System.EventHandler(this.SLOT_SelectedIndexChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.linkLabel1);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(21, 265);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(379, 85);
-            this.panel2.TabIndex = 20;
             // 
             // dtformat
             // 
@@ -379,7 +379,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 393);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "dtformat";
             this.Text = "datetimeformat";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.dtformat_FormClosed);

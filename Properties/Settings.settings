@@ -57,7 +57,7 @@
       <Value Profile="(Default)">395</Value>
     </Setting>
     <Setting Name="api" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://script.google.com/macros/s/AKfycbwi9WavekyZWoHHi0zZ8UDXtY-0zqPQymnnUCBTLfk52dNuzUuWB44AG950aQRYFySdZw/exec?game=all</Value>
+      <Value Profile="(Default)">https://script.google.com/macros/s/AKfycbxiN0USvNN0hQyO5b3Ep_oJy_qQxCRAlT4NU954QXKYZ6GrGyzsBnhi8RgMHLZHct-QJg/exec?game=all</Value>
     </Setting>
     <Setting Name="parse" Type="System.String" Scope="User">
       <Value Profile="(Default)">/data/proseka/name,/data/proseka/start,/data/proseka/end</Value>
@@ -81,7 +81,7 @@
       <Value Profile="(Default)">https://api.matsurihi.me/mltd/v1/events/241/rankings/logs/idolPoint/21/100</Value>
     </Setting>
     <Setting Name="api2" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://script.google.com/macros/s/AKfycbwi9WavekyZWoHHi0zZ8UDXtY-0zqPQymnnUCBTLfk52dNuzUuWB44AG950aQRYFySdZw/exec?game=all</Value>
+      <Value Profile="(Default)">https://script.google.com/macros/s/AKfycbxiN0USvNN0hQyO5b3Ep_oJy_qQxCRAlT4NU954QXKYZ6GrGyzsBnhi8RgMHLZHct-QJg/exec?game=all</Value>
     </Setting>
     <Setting Name="parse2" Type="System.String" Scope="User">
       <Value Profile="(Default)">/data/proseka/name,/data/proseka/start,/data/proseka/end</Value>
