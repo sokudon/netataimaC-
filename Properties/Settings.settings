@@ -45,7 +45,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="build" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2023/07/01 14:37</Value>
+      <Value Profile="(Default)">2023/07/20 12:19</Value>
     </Setting>
     <Setting Name="json" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -62,32 +62,8 @@
     <Setting Name="parse" Type="System.String" Scope="User">
       <Value Profile="(Default)">/data/proseka/name,/data/proseka/start,/data/proseka/end</Value>
     </Setting>
-    <Setting Name="idol" Type="System.String" Scope="User">
-      <Value Profile="(Default)">21	徳川まつり</Value>
-    </Setting>
-    <Setting Name="rank" Type="System.String" Scope="User">
-      <Value Profile="(Default)">100</Value>
-    </Setting>
-    <Setting Name="genzai" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="url2" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://api.matsurihi.me/mltd/v1/events/290/rankings/logs/idolPoint/21/100</Value>
-    </Setting>
-    <Setting Name="timeset" Type="System.String" Scope="User">
-      <Value Profile="(Default)">----</Value>
-    </Setting>
-    <Setting Name="url" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://api.matsurihi.me/mltd/v1/events/241/rankings/logs/idolPoint/21/100</Value>
-    </Setting>
-    <Setting Name="api2" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://script.google.com/macros/s/AKfycbxiN0USvNN0hQyO5b3Ep_oJy_qQxCRAlT4NU954QXKYZ6GrGyzsBnhi8RgMHLZHct-QJg/exec?game=all</Value>
-    </Setting>
     <Setting Name="parse2" Type="System.String" Scope="User">
       <Value Profile="(Default)">/data/proseka/name,/data/proseka/start,/data/proseka/end</Value>
-    </Setting>
-    <Setting Name="slot" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1</Value>
     </Setting>
   </Settings>
 </SettingsFile>

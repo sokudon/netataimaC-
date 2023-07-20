@@ -56,7 +56,6 @@
             this.wEBたいまーToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wEBせかいどけいToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.バージョンToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -273,8 +272,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.時刻設定ToolStripMenuItem,
             this.外部つーるへエクスポートToolStripMenuItem,
-            this.バージョンToolStripMenuItem,
-            this.cmpToolStripMenuItem});
+            this.バージョンToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(680, 28);
@@ -334,13 +332,6 @@
             this.バージョンToolStripMenuItem.Text = "バージョン";
             this.バージョンToolStripMenuItem.Click += new System.EventHandler(this.バージョンToolStripMenuItem_Click);
             // 
-            // cmpToolStripMenuItem
-            // 
-            this.cmpToolStripMenuItem.Name = "cmpToolStripMenuItem";
-            this.cmpToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
-            this.cmpToolStripMenuItem.Text = "cmp";
-            this.cmpToolStripMenuItem.Click += new System.EventHandler(this.cmpToolStripMenuItem_Click);
-            // 
             // NETA_TIMER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -395,7 +386,6 @@
         private System.Windows.Forms.ToolStripMenuItem ぱいそんたいまーToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oBSタイマーToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wEBせかいどけいToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cmpToolStripMenuItem;
     }
 }
 

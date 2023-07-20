@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SLOT = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -64,7 +63,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.SLOT);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.comboBox3);
@@ -82,20 +80,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(403, 356);
             this.panel1.TabIndex = 1;
-            // 
-            // SLOT
-            // 
-            this.SLOT.FormattingEnabled = true;
-            this.SLOT.Items.AddRange(new object[] {
-            "SLOT１",
-            "SLOT２"});
-            this.SLOT.Location = new System.Drawing.Point(284, 236);
-            this.SLOT.Name = "SLOT";
-            this.SLOT.Size = new System.Drawing.Size(87, 23);
-            this.SLOT.TabIndex = 19;
-            this.SLOT.Text = "SLOT1";
-            this.SLOT.Visible = false;
-            this.SLOT.SelectedIndexChanged += new System.EventHandler(this.SLOT_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -412,6 +396,5 @@
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox SLOT;
     }
 }

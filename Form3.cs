@@ -258,14 +258,8 @@ namespace neta
             }
             var form4 = new Form4();
             form4.ShowDialog();
-            form4.Dispose(); if (SLOT.SelectedIndex == 1)
-            {
-                textBox4.Text = Properties.Settings.Default.parse;
-            }
-            else {
+            form4.Dispose();
 
-                textBox4.Text = Properties.Settings.Default.parse2;
-            }
 
         }
 
@@ -283,10 +277,6 @@ namespace neta
 
         }
 
-        private void SLOT_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.slot = SLOT.SelectedIndex;
 
-        }
     }
 }

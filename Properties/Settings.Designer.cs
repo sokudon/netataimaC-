@@ -193,7 +193,7 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2023/07/01 14:37")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2023/07/20 12:19")]
         public string build {
             get {
                 return ((string)(this["build"]));
@@ -266,91 +266,6 @@ namespace neta.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("21\t徳川まつり")]
-        public string idol {
-            get {
-                return ((string)(this["idol"]));
-            }
-            set {
-                this["idol"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
-        public string rank {
-            get {
-                return ((string)(this["rank"]));
-            }
-            set {
-                this["rank"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool genzai {
-            get {
-                return ((bool)(this["genzai"]));
-            }
-            set {
-                this["genzai"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://api.matsurihi.me/mltd/v1/events/290/rankings/logs/idolPoint/21/100")]
-        public string url2 {
-            get {
-                return ((string)(this["url2"]));
-            }
-            set {
-                this["url2"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("----")]
-        public string timeset {
-            get {
-                return ((string)(this["timeset"]));
-            }
-            set {
-                this["timeset"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://api.matsurihi.me/mltd/v1/events/241/rankings/logs/idolPoint/21/100")]
-        public string url {
-            get {
-                return ((string)(this["url"]));
-            }
-            set {
-                this["url"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://script.google.com/macros/s/AKfycbxiN0USvNN0hQyO5b3Ep_oJy_qQxCRAlT4NU954QX" +
-            "KYZ6GrGyzsBnhi8RgMHLZHct-QJg/exec?game=all")]
-        public string api2 {
-            get {
-                return ((string)(this["api2"]));
-            }
-            set {
-                this["api2"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("/data/proseka/name,/data/proseka/start,/data/proseka/end")]
         public string parse2 {
             get {
@@ -358,18 +273,6 @@ namespace neta.Properties {
             }
             set {
                 this["parse2"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public int slot {
-            get {
-                return ((int)(this["slot"]));
-            }
-            set {
-                this["slot"] = value;
             }
         }
     }
