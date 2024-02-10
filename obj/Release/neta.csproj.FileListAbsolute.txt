@@ -1,0 +1,15 @@
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\bin\Release\neta.exe.config
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\bin\Release\neta.exe
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\bin\Release\neta.pdb
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\bin\Release\Newtonsoft.Json.dll
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\bin\Release\Newtonsoft.Json.xml
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\obj\Release\neta.NETA_TIMER.resources
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\obj\Release\neta.VER.resources
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\obj\Release\neta.dtformat.resources
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\obj\Release\neta.Form4.resources
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\obj\Release\neta.Properties.Resources.resources
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\obj\Release\neta.csproj.GenerateResource.cache
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\obj\Release\neta.csproj.CoreCompileInputs.cache
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\obj\Release\neta.csproj.CopyComplete
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\obj\Release\neta.exe
+C:\Users\imasp\OneDrive\Desktop\git\netataimaC-\obj\Release\neta.pdb

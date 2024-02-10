@@ -45,6 +45,7 @@ namespace neta
                 using (var reader = new StreamReader("tmp.js"))
                 using (var jsonReader = new JsonTextReader(reader))
                 {
+                    jsonReader.DateParseHandling = DateParseHandling.None;
                     var root = JToken.Load(jsonReader);
                     DisplayTreeView(root, url);
                 }
